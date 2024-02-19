@@ -9,6 +9,25 @@
   font-style: normal;
 }
 
+:root {
+  // Colors
+  --color-primary: #4169e1;
+  --color-primary-light-100: #6988e7;
+  --color-primary-light-200: #90a8ee;
+  --color-primary-light-300: #b8c7f4;
+  --color-primary-dark-100: #214ed3;
+  --color-primary-dark-200: #1b3fab;
+  --color-primary-dark-300: #153084;
+
+  --color-secondary: #0087d6;
+  --color-secondary-100: #0081e6;
+  --color-secondary-200: #0077e9;
+
+  --color-tertiary: #cc2d90;
+  --color-tertiary-100: #b342b2;
+  --color-tertiary-200: #8a57ce;
+}
+
 .light-color-scheme {
   --color-bg: #ffffff;
   --color-text: #000000;
