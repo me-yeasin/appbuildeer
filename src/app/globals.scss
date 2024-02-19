@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
+// ===================== Default Values =========================
 * {
   box-sizing: border-box;
   padding: 0;
@@ -9,6 +10,9 @@
   font-style: normal;
 }
 
+//################### End Default Values #####################
+
+//================== Root Values =====================
 :root {
   // Colors
   --color-primary: #4169e1;
@@ -28,6 +32,10 @@
   --color-tertiary-200: #8a57ce;
 }
 
+//################### End Root Values #####################
+
+//================ Color Scheme ==================
+
 .light-color-scheme {
   --color-bg: #ffffff;
   --color-text: #000000;
@@ -38,6 +46,9 @@
   --color-text: #ffffff;
 }
 
+//################### End Color Scheme #####################
+
+//================== Global Styles ===================
 html[theme-mode="light"] {
   @extend .light-color-scheme;
 }
@@ -45,6 +56,8 @@ html[theme-mode="light"] {
 html[theme-mode="dark"] {
   @extend .dark-color-scheme;
 }
+
+//################### End Global Styles ####################
 
 body {
   background-color: var(--color-bg);

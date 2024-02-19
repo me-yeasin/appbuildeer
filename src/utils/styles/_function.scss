@@ -1,0 +1,65 @@
+//=================== Media Query Mixins =================
+
+@mixin small-phone() {
+  @media (min-width: 20rem) {
+    /* smartphones, iPhone, portrait 480x320 phones */
+    @content;
+  }
+}
+
+@mixin big-phone() {
+  @media (min-width: 30.06rem) {
+    /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+    @content;
+  }
+}
+
+@mixin small-tablet() {
+  @media (min-width: 40.06rem) {
+    /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+    @content;
+  }
+}
+
+@mixin big-tablet() {
+  @media (min-width: 60.06rem) {
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
+    @content;
+  }
+}
+
+@mixin small-pc() {
+  @media (min-width: 64.06rem) {
+    /* big landscape tablets, laptops, and desktops */
+    @content;
+  }
+}
+
+@mixin big-pc() {
+  @media (min-width: 80.06rem) {
+    /* hi-res laptops and desktops */
+    @content;
+  }
+}
+
+//################## End Media Query Mixins ####################
+
+//================== Layout Mixins =================
+
+@mixin column() {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin row() {
+  display: flex;
+  flex-direction: row;
+}
+
+//################## End Layout Mixins ####################
+
+//================= Other Mixins ======================
+
+@mixin smooth() {
+  transition: all 400ms ease-in-out;
+}
