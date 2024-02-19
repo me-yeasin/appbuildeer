@@ -1,0 +1,58 @@
+@use "../../utils/styles/function";
+
+.root-header {
+  height: 100%;
+  width: 100%;
+  @include function.row();
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+
+  .app-link {
+    text-decoration: none;
+
+    .app-link__icon {
+      height: 30px;
+      width: 30px;
+    }
+  }
+
+  .drawer-btn {
+    background-color: transparent;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    margin: 0 0 8px 0;
+    padding: 10px 5px;
+    border-radius: 15px;
+    @include function.smooth();
+
+    &:hover,
+    &:active {
+      margin: 0;
+      .drawer-btn__line-one {
+        transform: rotateZ(45deg);
+        margin: 0;
+      }
+      .drawer-btn__line-two {
+        width: 25px;
+        margin: 0;
+        transform: rotateZ(-45deg);
+      }
+    }
+
+    .drawer-btn__line-one {
+      width: 25px;
+      height: 1px;
+      background-color: var(--color-text);
+      margin: 0 0 8px 0;
+      @include function.smooth();
+    }
+    .drawer-btn__line-two {
+      width: 20px;
+      height: 1px;
+      background-color: var(--color-text);
+      @include function.smooth();
+    }
+  }
+}
