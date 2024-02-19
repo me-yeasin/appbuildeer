@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import TopNavBar from "@/components/top_nav_bar/top_nav_bar";
 import StoreProvider from "../store/store_provider";
 
 import "./globals.scss";
@@ -18,7 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <StoreProvider>
         <body>
-          <header id="header"></header>
+          <TopNavBar />
           <main id="main">{children}</main>
           <footer id="footer"></footer>
         </body>
