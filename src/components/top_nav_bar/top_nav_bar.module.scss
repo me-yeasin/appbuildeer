@@ -70,7 +70,8 @@
 
 .override-overlay {
   width: 85vw;
-  background-color: var(--color-primary-light-300);
+  background-color: rgba(32, 47, 93, 0.45);
+  backdrop-filter: blur(4px);
   left: unset;
   right: 0;
   transform: scaleX(0);

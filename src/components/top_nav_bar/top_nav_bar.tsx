@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 
 import AppIcon from "@/assets/icons/app_icon";
 import { useAppSelector } from "../../store/hooks";
+import Drawer from "../drawer/drawer";
 import Overlay from "../overlay/overlay";
 
 import classes from "./top_nav_bar.module.scss";
@@ -62,7 +63,7 @@ const TopNavBar: React.FC<TopNavBarProps> = (props) => {
           classes["override-overlay"]
         }`}
       >
-        <h1>Hello World</h1>
+        <Drawer />
       </Overlay>
     </>
   );

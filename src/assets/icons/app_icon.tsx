@@ -1,3 +1,5 @@
+import { memo } from "react";
+
 interface AppIconProps {
   className?: any;
 }
@@ -24,4 +26,4 @@ const AppIcon: React.FC<AppIconProps> = (props) => {
   );
 };
 
-export default AppIcon;
+export default memo(AppIcon);
