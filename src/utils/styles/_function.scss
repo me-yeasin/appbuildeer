@@ -42,6 +42,12 @@
   }
 }
 
+@mixin if-size($width) {
+  @media screen and (min-width: $width) {
+    @content;
+  }
+}
+
 //################## End Media Query Mixins ####################
 
 //================== Layout Mixins =================

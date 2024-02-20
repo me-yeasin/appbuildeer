@@ -1,5 +1,21 @@
 @use "../../utils/styles/function";
 
+.root-header__active {
+  transform: translateX(-80%);
+  @include function.if-size(250px) {
+    transform: translateX(-82%);
+  }
+  @include function.if-size(300px) {
+    transform: translateX(-85%);
+  }
+  @include function.if-size(370px) {
+    transform: translateX(-87%);
+  }
+  @include function.if-size(520px) {
+    transform: translateX(-89%);
+  }
+}
+
 .root-header {
   height: 100%;
   width: 100%;
@@ -7,6 +23,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 10px;
+  @include function.smooth();
 
   .app-link {
     text-decoration: none;
@@ -20,26 +37,11 @@
   .drawer-btn {
     background-color: transparent;
     border: none;
-    position: relative;
     cursor: pointer;
     margin: 0 0 8px 0;
     padding: 10px 5px;
     border-radius: 15px;
     @include function.smooth();
-
-    &:hover,
-    &:active {
-      margin: 0;
-      .drawer-btn__line-one {
-        transform: rotateZ(45deg);
-        margin: 0;
-      }
-      .drawer-btn__line-two {
-        width: 25px;
-        margin: 0;
-        transform: rotateZ(-45deg);
-      }
-    }
 
     .drawer-btn__line-one {
       width: 25px;
@@ -48,11 +50,38 @@
       margin: 0 0 8px 0;
       @include function.smooth();
     }
+    .drawer-btn__line-one-active {
+      transform: rotateZ(45deg);
+      margin: 0;
+    }
     .drawer-btn__line-two {
       width: 20px;
       height: 1px;
       background-color: var(--color-text);
       @include function.smooth();
     }
+    .drawer-btn__line-two-active {
+      width: 25px;
+      margin: 0;
+      transform: rotateZ(-45deg);
+    }
   }
+}
+
+.override-overlay {
+  width: 85vw;
+  background-color: var(--color-primary-light-300);
+  left: unset;
+  right: 0;
+  transform: scaleX(0);
+  transform-origin: right;
+  @include function.smooth();
+
+  @include function.small-tablet() {
+    display: none;
+  }
+}
+
+.override-overlay__active {
+  transform: scaleX(1);
 }

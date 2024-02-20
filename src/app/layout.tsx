@@ -19,6 +19,8 @@ export default function RootLayout({
     <html lang="en">
       <StoreProvider>
         <body>
+          <div id="backdrop"></div>
+          <div id="overlay"></div>
           <TopNavBar />
           <main id="main">{children}</main>
           <footer id="footer"></footer>
