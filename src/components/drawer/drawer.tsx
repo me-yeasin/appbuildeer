@@ -1,19 +1,16 @@
-import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { memo } from "react";
 
 import AppIcon from "@/assets/icons/app_icon";
-import { RiCodeView } from "react-icons/ri";
+import NavigationList from "./navigation_list/navigation_list";
 
+import { IoMailOpenOutline } from "react-icons/io5";
 import classes from "./drawer.module.scss";
 
 interface DrawerPorps {}
 
 const Drawer: React.FC<DrawerPorps> = (props) => {
-  const [activeNavbutton, setActiveNavButton] = useState<string>("");
-
-  const onNavButtonClickHandler = (name: string) => {
-    setActiveNavButton(name);
-    console.log(activeNavbutton);
-  };
+  const router = useRouter();
 
   return (
     <div className={classes["drawer-root"]}>
@@ -24,37 +21,25 @@ const Drawer: React.FC<DrawerPorps> = (props) => {
           <p className={classes["app-description"]}>Build With Confidence</p>
         </div>
       </div>
-      <div className={classes["drawer-navigation"]}>
-        <ul className={classes["drawer-navigation__list"]}>
-          <li className={classes["drawer-navigation__item"]}>
-            <button
-              onClick={() => onNavButtonClickHandler("development")}
-              className={`${
-                activeNavbutton === "development" &&
-                classes["drawer-navigation__item-button-active"]
-              } ${classes["drawer-navigation__item-button"]}`}
-            >
-              <div
-                className={
-                  classes["drawer-navigation__button-name-logo-holder"]
-                }
-              >
-                <RiCodeView
-                  className={`${
-                    activeNavbutton === "development" &&
-                    classes["drawer-navigation__button-icon-active"]
-                  } ${classes["drawer-navigation__button-icon"]}`}
-                />
-                <p className={classes["drawer-navigation__button-text"]}>
-                  Development
-                </p>
-              </div>
-            </button>
-          </li>
-        </ul>
+      <NavigationList />
+      <div className={classes["talk-btn-container"]}>
+        <button
+          className={classes["talk-btn"]}
+          onClick={() =>
+            router.push(
+              `mailto:appbuildeer@gmail.com?subject=Subject&body=${"Hi AppBuildeer"}`
+            )
+          }
+        >
+          <IoMailOpenOutline />
+          <p>Let's Talk</p>
+        </button>
+        <p className={classes["info"]}>
+          feel free to discuss any thing about your project
+        </p>
       </div>
     </div>
   );
 };
 
-export default Drawer;
+export default memo(Drawer);

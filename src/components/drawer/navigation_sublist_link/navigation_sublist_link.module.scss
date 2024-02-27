@@ -1,0 +1,57 @@
+@use "../../../utils/styles/function";
+
+.drawer-navigation__sublist-item {
+  margin: 7px 0;
+
+  .drawer-navigation__sublist-item-link {
+    text-decoration: none;
+    &:hover,
+    &:active {
+      .drawer-navigation__item-icon-name-container {
+        svg {
+          color: var(--color-primary);
+        }
+
+        p {
+          color: var(--color-primary);
+          font-weight: 600;
+        }
+      }
+    }
+    .drawer-navigation__item-icon-name-container {
+      @include function.row();
+      align-items: center;
+
+      svg {
+        color: lightgray;
+        height: 20px;
+        width: 20px;
+        margin: 0 10px 0 0;
+        @include function.smooth();
+
+        @include function.if-size(300px) {
+          height: 25px;
+          width: 25px;
+        }
+      }
+
+      p {
+        color: lightgray;
+        font-size: 14px;
+        @include function.smooth();
+
+        @include function.if-size(250px) {
+          font-size: 11px;
+        }
+
+        @include function.if-size(280px) {
+          font-size: 13px;
+        }
+
+        @include function.if-size(300px) {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+@use "../../../utils/styles/function";
+
+.drawer-navigation__sublist {
+  margin: 0 0 0 15px;
+  @include function.column();
+  list-style: none;
+  align-items: flex-start;
+  transform: translateX(500px) scale(0);
+  @include function.smooth();
+  opacity: 0;
+  display: none;
+}
+
+.drawer-navigation__sublist-active {
+  animation: anim 0.3s ease-in forwards;
+  display: flex;
+
+  @keyframes anim {
+    0% {
+      display: flex;
+      transform: translateX(500px) scale(0);
+      transform-origin: left;
+      opacity: 0.5;
+    }
+
+    50% {
+      display: flex;
+      transform: translateX(250px) scale(0.5);
+      transform-origin: left;
+      opacity: 0.5;
+    }
+    100% {
+      display: flex;
+      transform: translateX(0) scale(1);
+      transform-origin: left;
+      opacity: 1;
+    }
+  }
+}

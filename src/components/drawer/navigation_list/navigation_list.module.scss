@@ -1,0 +1,17 @@
+@use "../../../utils/styles/function";
+
+.drawer-navigation {
+  margin: 60px 0 0 0;
+
+  .drawer-navigation__list {
+    list-style: none;
+    @include function.column();
+    align-items: flex-start;
+
+    .drawer-navigation__item {
+      width: 100%;
+      @include function.column();
+      align-items: flex-start;
+    }
+  }
+}

@@ -1,0 +1,58 @@
+@use "../../../utils/styles/function";
+
+.drawer-navigation__item-button-active {
+  &::before {
+    transform: scaleX(1) !important;
+  }
+}
+.drawer-navigation__item-button {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  @include function.row();
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 8px 5px;
+  border-radius: 10px;
+  position: relative;
+  z-index: 1;
+  @include function.smooth();
+  overflow: hidden;
+  margin: 0 0 10px 0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--color-primary);
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: right;
+    @include function.smooth();
+  }
+
+  .drawer-navigation__button-name-logo-holder {
+    @include function.row();
+    align-items: center;
+    .drawer-navigation__button-icon {
+      height: 22px;
+      width: 22px;
+      color: var(--color-secondary);
+      margin: 0 5px 0 0;
+      @include function.smooth();
+    }
+    .drawer-navigation__button-icon-active {
+      color: var(--color-dark);
+    }
+
+    .drawer-navigation__button-text {
+      font-size: var(--font-drawer-nav);
+      font-weight: var(--font-drawer-nav-weight);
+      color: var(--color-text);
+    }
+  }
+}
