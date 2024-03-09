@@ -1,0 +1,157 @@
+@use "../../utils/styles/function";
+
+.first-section {
+  height: 98dvh;
+  @include function.column();
+  justify-content: center;
+  align-items: center;
+
+  .title-text-container {
+    @include function.column();
+    align-items: center;
+    .d-text {
+      text-align: center;
+      font-size: 1rem;
+      font-weight: 800;
+      @include function.smooth();
+
+      @include function.if-size(280px) {
+        font-size: 1.07rem;
+      }
+      @include function.if-size(350px) {
+        font-size: 1.3rem;
+      }
+      @include function.if-size(430px) {
+        font-size: 1.5rem;
+      }
+
+      .changed-text {
+        color: var(--color-tertiary);
+        font-weight: 900;
+        letter-spacing: 1px;
+      }
+    }
+
+    .subtitle-text {
+      text-align: center;
+      font-size: 0.65rem;
+      margin-top: 10px;
+      @include function.smooth();
+
+      @include function.if-size(280px) {
+        padding: 0 4px;
+        font-size: 0.7rem;
+      }
+      @include function.if-size(300px) {
+        padding: 0 5px;
+      }
+      @include function.if-size(330px) {
+        padding: 0 7px;
+        font-size: 0.75rem;
+      }
+      @include function.if-size(380px) {
+        padding: 0 7px;
+        font-size: 0.8rem;
+      }
+      @include function.if-size(500px) {
+        padding: 0 15px;
+        font-size: 0.9rem;
+      }
+    }
+
+    .let-talk-btn {
+      border: none;
+      background-color: var(--color-primary);
+      @include function.row();
+      align-items: center;
+      justify-content: center;
+      width: 120px;
+      height: 35px;
+      border-radius: 20px;
+      color: var(--color-light);
+      box-shadow: 0 2px 5px rgba($color: #000000, $alpha: 0.35);
+      cursor: pointer;
+      margin-top: 30px;
+      @include function.smooth();
+
+      @include function.if-size(350px) {
+        width: 150px;
+        height: 40px;
+      }
+
+      @include function.if-size(400px) {
+        height: 45px;
+      }
+
+      &:active {
+        animation: btn-anim 100ms ease-in forwards;
+      }
+
+      @keyframes btn-anim {
+        0% {
+          transform: scale(1);
+        }
+
+        50% {
+          transform: scale(0.8);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      .let-talk-btn__icon {
+        height: 20px;
+        width: 20px;
+        margin-right: 5px;
+        @include function.smooth();
+
+        @include function.if-size(450px) {
+          height: 25px;
+          width: 25px;
+        }
+      }
+
+      .let-talk-btn__text {
+        font-weight: 500;
+        @include function.smooth();
+
+        @include function.if-size(450px) {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}
+
+.second-section {
+  // background-color: var(--color-primary-light-300);
+  padding: 15px 0;
+  @include function.column();
+  align-items: flex-start;
+
+  .second-section__title {
+    @include function.title();
+    border-bottom: 2px solid var(--color-primary);
+    width: 110px;
+    padding-bottom: 3px;
+    padding-left: 5px;
+  }
+
+  .second-section__btns {
+    width: 100%;
+    @include function.row();
+    justify-content: center;
+    margin-top: 20px;
+
+    .service_selected_btn {
+      background-color: var(--color-primary-light-100);
+      border: none;
+      font-size: 0.75rem;
+      padding: 5px 7px;
+      border-radius: 5px;
+      color: var(--color-light);
+      margin: 0 5px;
+    }
+  }
+}

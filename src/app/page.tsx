@@ -1,5 +1,7 @@
+import HomeScreen from "@/screens/home/home_screen";
+
 const LandingPage: React.FC = () => {
-  return <div>Hi Landing Page</div>;
+  return <HomeScreen />;
 };
 
 export default LandingPage;

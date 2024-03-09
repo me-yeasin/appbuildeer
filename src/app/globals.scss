@@ -47,11 +47,13 @@
 .light-color-scheme {
   --color-bg: #ffffff;
   --color-text: #000000;
+  --color-drawer-bg: rgba(255, 255, 255, 0.65);
 }
 
 .dark-color-scheme {
   --color-bg: #000000;
   --color-text: #ffffff;
+  --color-drawer-bg: rgba(0, 0, 0, 0.65);
 }
 
 //################### End Color Scheme #####################
@@ -71,15 +73,10 @@ body {
   background-color: var(--color-bg);
   color: var(--color-text);
   display: grid;
-  grid-template-rows: 70px auto fit-content(200px);
+  grid-template-rows: auto fit-content(200px);
   grid-template-areas:
-    "header"
     "main"
     "footer";
-}
-
-#header {
-  grid-area: header;
 }
 
 #main {

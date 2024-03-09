@@ -69,3 +69,8 @@
 @mixin smooth() {
   transition: all 400ms ease-in-out;
 }
+
+@mixin title() {
+  font-size: 1rem;
+  font-weight: 700;
+}

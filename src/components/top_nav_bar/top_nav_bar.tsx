@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 import AppIcon from "@/assets/icons/app_icon";
 import { useAppSelector } from "../../store/hooks";
@@ -15,10 +15,11 @@ interface TopNavBarProps {}
 const TopNavBar: React.FC<TopNavBarProps> = (props) => {
   const isDarkMode = useAppSelector((state) => state.themeSlice.isDarkMode);
   const [openDrawer, setOpenDrawer] = useState<boolean>(false);
+  const [scrollY, setScrollY] = useState<number>(0);
 
-  const onDrawerButtonClickHandler = () => {
+  const onDrawerButtonClickHandler = useCallback(() => {
     setOpenDrawer((prev) => !prev);
-  };
+  }, []);
 
   useEffect(() => {
     const rootElement = document.documentElement;
@@ -29,13 +30,25 @@ const TopNavBar: React.FC<TopNavBarProps> = (props) => {
     }
   }, [isDarkMode]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <>
       <header
         id="header"
         className={`${openDrawer && classes["root-header__active"]} ${
-          classes["root-header"]
-        }`}
+          scrollY > 30 && classes["add-root-header-bg"]
+        } ${classes["root-header"]}`}
       >
         <Link href={""} className={classes["app-link"]}>
           <AppIcon className={classes["app-link__icon"]} />

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 
 import classes from "./overlay.module.scss";
@@ -57,4 +57,4 @@ const Overlay = ({
   );
 };
 
-export default Overlay;
+export default React.memo(Overlay);

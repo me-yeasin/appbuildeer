@@ -5,6 +5,7 @@
   height: 100%;
   @include function.column();
   padding: 10px 0 0 7px;
+  overflow: scroll;
 
   .app-logo-name {
     @include function.row();
