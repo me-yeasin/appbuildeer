@@ -1,0 +1,18 @@
+@use "../../utils/styles/function";
+
+.body-title {
+  @include function.title();
+  border-bottom: 2px solid var(--color-primary);
+  // width: 110px;
+  padding-bottom: 3px;
+  padding-left: 10px;
+  @include function.smooth();
+
+  @include function.if-size(420px) {
+    padding-left: 20px;
+  }
+
+  @include function.if-size(520px) {
+    padding-left: 35px;
+  }
+}

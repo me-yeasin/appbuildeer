@@ -1,9 +1,16 @@
 "use client";
 
-import { TypeAnimation } from "react-type-animation";
-
-import CubicImageSlider from "@/components/cubic_image_slider/cubic_image_slider";
 import { useState } from "react";
+import { TypeAnimation } from "react-type-animation";
+import { useScreenSize } from "../../hooks/useScreenSize";
+
+import BodyTitle from "@/components/body_title/body_title";
+import CubicImageSlider from "@/components/cubic_image_slider/cubic_image_slider";
+import PagePerViewSlider from "@/components/page_per_view_slider/page_per_view_slider";
+import {
+  designServices,
+  devServices,
+} from "@/utils/local_data/service_item_data";
 import { IoIosMail } from "react-icons/io";
 
 import "swiper/css";
@@ -14,13 +21,18 @@ import classes from "./home_screen.module.scss";
 interface HomeScreenProps {}
 
 const HomeScreen: React.FC<HomeScreenProps> = (props) => {
-  const [toggleAnimation, setToggleAnimation] = useState<boolean>(false);
+  const [serviceBtnToggle, setServiceBtnToggle] = useState<boolean>(false);
+  const [_, width] = useScreenSize();
+
+  const serviceToggleBtnHandler = () => {
+    setServiceBtnToggle((prev) => !prev);
+  };
 
   return (
     <>
       <section className={classes["first-section"]}>
         <CubicImageSlider
-          loop={false}
+          loop={true}
           shadow={false}
           slideShadows={false}
           itemList={[
@@ -64,12 +76,40 @@ const HomeScreen: React.FC<HomeScreenProps> = (props) => {
         </div>
       </section>
       <section className={classes["second-section"]}>
-        <p className={classes["second-section__title"]}>Services</p>
-        <div className={classes["second-section__btns"]}>
-          <button className={classes["service_selected_btn"]}>
-            Development
+        <BodyTitle text="Our Services" />
+        <div className={classes["service-slider"]}>
+          <PagePerViewSlider
+            slidesPerView={width < 330 ? 1 : width >= 550 ? 3 : 2}
+            spaceBetween={0}
+            items={!serviceBtnToggle ? devServices : designServices}
+            loop={true}
+          />
+        </div>
+        <div className={classes["service-toggle-btn-container"]}>
+          <button
+            onClick={serviceToggleBtnHandler}
+            className={classes["service-toggle-btn"]}
+          >
+            <div
+              className={`${
+                serviceBtnToggle && classes["service-toggle-btn-bg__active"]
+              } ${classes["service-toggle-btn__bg-color"]}`}
+            ></div>
+            <p
+              className={`${
+                !serviceBtnToggle && classes["service-toggle-btn__dev-active"]
+              } ${classes["service-toggle-btn-name"]}`}
+            >
+              Development
+            </p>
+            <p
+              className={`${
+                serviceBtnToggle && classes["service-toggle-btn__design-active"]
+              } ${classes["service-toggle-btn-name"]}`}
+            >
+              Design
+            </p>
           </button>
-          <button className={classes["service_selected_btn"]}>Design</button>
         </div>
       </section>
     </>

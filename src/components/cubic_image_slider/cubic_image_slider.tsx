@@ -16,6 +16,7 @@ interface CubicImageSliderProps {
   shadow: boolean;
   slideShadows: boolean;
   itemList: string[];
+  autoPlayDuration?: number;
 }
 
 const CubicImageSlider: React.FC<CubicImageSliderProps> = (props) => {
@@ -29,11 +30,16 @@ const CubicImageSlider: React.FC<CubicImageSliderProps> = (props) => {
           shadow: props.shadow,
           slideShadows: props.slideShadows,
         }}
+        autoplay={{
+          delay: props.autoPlayDuration || 3000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        }}
         modules={[EffectCube]}
         className={classes["slider"]}
       >
         {props.itemList.map((item, index) => (
-          <SwiperSlide className={classes["slider-item"]}>
+          <SwiperSlide className={classes["slider-item"]} key={index}>
             <Image
               src={item}
               alt="slider image"
