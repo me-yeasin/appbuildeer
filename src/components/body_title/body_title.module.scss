@@ -3,7 +3,6 @@
 .body-title {
   @include function.title();
   border-bottom: 2px solid var(--color-primary);
-  // width: 110px;
   padding-bottom: 3px;
   padding-left: 10px;
   @include function.smooth();

@@ -74,3 +74,16 @@
   font-size: 1rem;
   font-weight: 700;
 }
+
+@mixin subtitle() {
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+// Text Gradient
+@mixin linear-gradient-text($position, $from, $to) {
+  background: linear-gradient(to right, $from, $to);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}

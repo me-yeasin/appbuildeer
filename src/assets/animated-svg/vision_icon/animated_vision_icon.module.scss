@@ -1,0 +1,46 @@
+@use "../../../utils/styles/function";
+
+.icon {
+  height: 75px;
+  width: 75px;
+
+  path {
+    fill: var(--color-text);
+  }
+}
+
+.tir {
+  stroke-width: 5;
+  fill: none;
+  stroke: var(--color-text);
+  transform: translateX(40px) translateY(-40px);
+  animation: tir-anim 1s linear infinite;
+
+  @keyframes tir-anim {
+    50% {
+      transform: translateX(0) translateY(0);
+      stroke: var(--color-primary);
+    }
+    100% {
+      transform: translateX(0) translateY(0);
+      stroke: var(--color-primary);
+    }
+  }
+}
+
+.last-circle {
+  stroke: var(--color-text);
+  stroke-width: 4;
+  fill: none;
+  stroke-dasharray: 200;
+  animation: last-circle-anim 1s linear infinite;
+
+  @keyframes last-circle-anim {
+    50% {
+      stroke: var(--color-primary);
+    }
+    100% {
+      stroke: var(--color-primary);
+    }
+  }
+}

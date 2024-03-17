@@ -13,6 +13,7 @@ import {
 } from "@/utils/local_data/service_item_data";
 import { IoIosMail } from "react-icons/io";
 
+import HowItsWorkItem from "@/components/how_its_work_item/how_its_work_item";
 import "swiper/css";
 import "swiper/css/effect-cube";
 import "swiper/css/pagination";
@@ -30,6 +31,7 @@ const HomeScreen: React.FC<HomeScreenProps> = (props) => {
 
   return (
     <>
+      {/* Header Section  */}
       <section className={classes["first-section"]}>
         <CubicImageSlider
           loop={true}
@@ -75,6 +77,7 @@ const HomeScreen: React.FC<HomeScreenProps> = (props) => {
           </button>
         </div>
       </section>
+      {/* Services Section  */}
       <section className={classes["second-section"]}>
         <BodyTitle text="Our Services" />
         <div className={classes["service-slider"]}>
@@ -111,6 +114,19 @@ const HomeScreen: React.FC<HomeScreenProps> = (props) => {
             </p>
           </button>
         </div>
+      </section>
+      {/* How Its Work Section  */}
+      <section className={classes["third-section"]}>
+        <BodyTitle text="How It Works" className={classes["title-text"]} />
+        <p className={classes["second-title"]}>
+          Start Your Project in <span>Six Simple</span> Steps
+        </p>
+        <p className={classes["third-section__subtitle"]}>
+          Discover the ease of working with us
+        </p>
+        <u className={classes["how-its-work__view-list"]}>
+          <HowItsWorkItem />
+        </u>
       </section>
     </>
   );

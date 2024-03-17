@@ -132,7 +132,7 @@
   .service-slider {
     width: 100vw;
     height: 200px;
-    margin-top: 30px;
+    margin-top: 50px;
   }
 
   .service-toggle-btn-container {
@@ -208,5 +208,45 @@
         color: var(--color-light);
       }
     }
+  }
+}
+
+.third-section {
+  @include function.column();
+  align-items: flex-start;
+  margin-top: 50px;
+
+  .second-title {
+    @include function.title();
+    text-align: start;
+    margin-top: 15px;
+    font-size: 0.9rem;
+
+    span {
+      background: linear-gradient(
+        to left,
+        var(--color-primary),
+        var(--color-tertiary)
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+  }
+
+  .third-section__subtitle {
+    font-size: 0.82rem;
+    margin-top: 2px;
+    margin-bottom: 50px;
+  }
+
+  .how-its-work__view-list {
+    width: 100vw;
+    height: wrap;
+    padding: 15px 10px;
+    @include function.row();
+    align-items: center;
+    list-style: none;
+    text-decoration: none;
   }
 }
