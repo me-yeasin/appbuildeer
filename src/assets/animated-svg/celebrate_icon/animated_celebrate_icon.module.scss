@@ -1,0 +1,20 @@
+@use "../../../utils/styles/function";
+
+.celebrate-icon {
+  .center-star {
+    transform: rotateZ(0deg);
+    transform-origin: center;
+    transform-box: fill-box;
+
+    animation: center-star 1s ease infinite alternate;
+
+    @keyframes center-star {
+      from {
+        transform: rotateZ(0deg);
+      }
+      to {
+        transform: rotateZ(360deg);
+      }
+    }
+  }
+}

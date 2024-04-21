@@ -1,0 +1,7 @@
+@use "../../../utils/styles/function";
+
+.title-text {
+  display: inline-block;
+  border-bottom: 3px solid var(--color-tertiary);
+  padding: 0 0 5px 15px;
+}

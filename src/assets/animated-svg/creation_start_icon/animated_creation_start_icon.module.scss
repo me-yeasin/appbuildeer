@@ -1,0 +1,48 @@
+.creation-icon {
+  path {
+    fill: var(--color-text);
+  }
+  .star {
+    fill: var(--color-primary);
+    transform: scaleX(1) scaleY(1);
+    transform-origin: center;
+    transform-box: fill-box;
+    animation: star-scale 1s ease infinite alternate;
+
+    @keyframes star-scale {
+      from {
+        transform: scaleX(0.3) scaleY(0.3) rotateZ(0deg);
+      }
+      to {
+        transform: scaleX(1) scaleY(1) rotateZ(180deg);
+      }
+    }
+  }
+
+  .fire {
+    transform: scaleY(1);
+    transform-origin: center;
+    transform-box: fill-box;
+    animation: fire-anim 1s ease infinite alternate;
+    fill: var(--color-primary);
+    filter: url(#glow);
+
+    @keyframes fire-anim {
+      0% {
+        transform: scaleY(1) scaleX(1);
+      }
+      25% {
+        transform: scaleY(0.9) scaleX(1.1);
+      }
+      50% {
+        transform: scaleY(1.1) scaleX(1.2);
+      }
+      75% {
+        transform: scaleY(1.2) scaleX(1.1);
+      }
+      100% {
+        transform: scaleY(1) scaleX(1);
+      }
+    }
+  }
+}

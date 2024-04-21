@@ -1,0 +1,20 @@
+@use "../../../utils/styles/function";
+
+.how-its-work-section {
+  @include function.column();
+  align-items: flex-start;
+
+  .how-its-work__lower-title-subtitle-container {
+    margin: 50px 0;
+    .how-its-work__lower-title {
+      width: 100vw;
+      text-align: center;
+    }
+
+    .how-its-work__subtitle {
+      text-align: center;
+      width: 100%;
+      margin-top: 5px;
+    }
+  }
+}

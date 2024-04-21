@@ -1,0 +1,12 @@
+@use "../../utils/styles/function";
+
+.how-its-work__view-list {
+  width: 100vw;
+  height: wrap;
+  padding: 15px 10px;
+  @include function.row();
+  align-items: center;
+  list-style: none;
+  text-decoration: none;
+  overflow-x: scroll;
+}

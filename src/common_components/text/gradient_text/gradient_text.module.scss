@@ -1,0 +1,12 @@
+@use "../../../utils/styles/function";
+
+.gradient-text {
+  background: linear-gradient(
+    to right,
+    var(--color-primary) 0%,
+    var(--color-tertiary) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}

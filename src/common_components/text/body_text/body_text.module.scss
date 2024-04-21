@@ -1,0 +1,19 @@
+@use "../../../utils/styles/function";
+
+.body-text {
+  font-size: 0.9rem;
+  color: var(--color-text);
+  @include function.smooth();
+
+  @include function.if-size(250px) {
+    font-size: 0.78rem;
+  }
+
+  @include function.if-size(300px) {
+    font-size: 0.82rem;
+  }
+
+  @include function.if-size(400px) {
+    font-size: 0.9rem;
+  }
+}

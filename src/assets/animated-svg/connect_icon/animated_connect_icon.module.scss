@@ -1,0 +1,24 @@
+@use "../../../utils/styles/function";
+
+.connect-icon {
+  height: 80px;
+  width: 80px;
+}
+
+.path-one {
+  stroke: var(--color-primary);
+  fill: none;
+  stroke-width: 4;
+  stroke-dasharray: 3;
+  stroke-dashoffset: 0;
+  animation: path-one-anim 2s linear infinite alternate;
+
+  @keyframes path-one-anim {
+    from {
+      stroke-dashoffset: 0;
+    }
+    to {
+      stroke-dashoffset: 50;
+    }
+  }
+}

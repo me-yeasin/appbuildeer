@@ -1,42 +1,21 @@
 @use "../../utils/styles/function";
 
 .img-slider {
-  height: 50%;
+  height: 100%;
   width: 100vw;
   @include function.column();
   justify-content: center;
   align-items: center;
   @include function.smooth();
 
-  @include function.if-size(550px) {
-    margin-bottom: 10px;
-  }
-
-  @include function.if-size(620px) {
-    height: 60%;
-  }
-
   .slider {
     height: 100%;
     width: 100%;
 
     .slider-item {
-      height: 85%;
-      width: 85%;
+      height: 100%;
+      width: 100%;
       @include function.smooth();
-
-      @include function.if-size(500px) {
-        height: 90%;
-        width: 90%;
-      }
-      @include function.if-size(550px) {
-        height: 95%;
-        width: 95%;
-      }
-      @include function.if-size(600px) {
-        height: 100%;
-        width: 100%;
-      }
 
       .slider-item__img {
         height: 100%;

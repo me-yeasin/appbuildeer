@@ -17,11 +17,12 @@ interface CubicImageSliderProps {
   slideShadows: boolean;
   itemList: string[];
   autoPlayDuration?: number;
+  className?: String;
 }
 
 const CubicImageSlider: React.FC<CubicImageSliderProps> = (props) => {
   return (
-    <div className={classes["img-slider"]}>
+    <div className={`${props.className} ${classes["img-slider"]}`}>
       <Swiper
         effect={"cube"}
         grabCursor={true}

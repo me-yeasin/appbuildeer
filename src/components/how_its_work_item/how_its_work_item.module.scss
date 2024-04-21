@@ -4,6 +4,12 @@
   @include function.column();
   text-decoration: none;
   max-width: 160px;
+  margin-right: 30px;
+  @include function.smooth();
+
+  @include function.if-size(500px) {
+    margin-right: 60px;
+  }
 
   .how-its-work__icon-part {
     height: 120px;
@@ -48,8 +54,8 @@
   }
 
   .process-title {
-    @include function.title();
-    font-size: 0.85rem;
+    font-weight: 700;
+    font-size: 0.9rem;
   }
 
   .process-description {

@@ -1,0 +1,46 @@
+// @use "../../../utils/styles/function";
+
+.subscription-plan {
+  height: 87px;
+  width: 87px;
+
+  path {
+    fill: var(--color-text);
+  }
+
+  .circle {
+    transform: rotateY(0deg);
+    transform-origin: center;
+    transform-box: fill-box;
+    transform-style: preserve-3d;
+    animation: circle-anim 2s linear infinite;
+    fill: var(--color-primary);
+
+    @keyframes circle-anim {
+      from {
+        transform: rotateY(0deg);
+      }
+      to {
+        transform: rotateY(360deg);
+      }
+    }
+  }
+
+  .symbol {
+    transform: rotateY(0deg);
+    transform-origin: center;
+    transform-box: fill-box;
+    transform-style: preserve-3d;
+
+    animation: symbol-anim 2s linear infinite;
+
+    @keyframes symbol-anim {
+      from {
+        transform: rotateY(0deg);
+      }
+      to {
+        transform: rotateY(360deg);
+      }
+    }
+  }
+}
