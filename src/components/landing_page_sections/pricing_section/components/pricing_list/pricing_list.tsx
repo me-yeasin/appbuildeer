@@ -7,7 +7,7 @@ interface PricingListProps {}
 const PricingList: React.FC<PricingListProps> = (props) => {
   return (
     <div className={classes["pricing-slider"]}>
-      <PricingItem />
+      <PricingItem isPricingCardDarkMode={false} />
     </div>
   );
 };
