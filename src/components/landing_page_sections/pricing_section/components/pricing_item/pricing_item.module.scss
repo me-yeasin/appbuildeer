@@ -1,0 +1,63 @@
+@use "../../../../../utils/styles/function";
+
+.pricing-item {
+  width: 100vw;
+  @include function.column();
+  align-items: center;
+
+  .pricing-item-card {
+    width: 230px;
+    background-color: var(--color-card-bg);
+    @include function.column();
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba($color: #000000, $alpha: 0.35);
+    position: relative;
+
+    .pricing-item-card__plan-name {
+      width: 100%;
+      text-align: center;
+      font-size: 0.9rem;
+      font-weight: 500;
+      height: 30px;
+      @include function.column();
+      align-items: center;
+      justify-content: center;
+      margin-top: 8px;
+    }
+
+    .pricing-item-card__change-plan-btn {
+      border: none;
+      height: 30px;
+      width: 100%;
+      @include function.row();
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      background-color: transparent;
+
+      .change-plan-btn__text {
+        font-size: 0.7rem;
+        font-weight: 600;
+        color: var(--color-primary);
+      }
+
+      svg {
+        height: 18px;
+        width: 18px;
+        color: var(--color-primary);
+        margin: 0 0 0 5px;
+      }
+    }
+
+    .pricing-item-card__dev-options {
+      height: 150px;
+      width: 100%;
+      background-color: var(--color-primary);
+      position: absolute;
+      bottom: 0;
+      top: 0;
+      z-index: 10;
+    }
+  }
+}

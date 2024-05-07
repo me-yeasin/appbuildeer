@@ -1,11 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 
+import ModalBottomSheetSlice from "./slice/modal_bottom_sheet_slice";
 import ThemeSlice from "./slice/theme_slice";
 
 export const makeStore = () =>
   configureStore({
     reducer: {
       themeSlice: ThemeSlice,
+      modalBottomSheetSlice: ModalBottomSheetSlice,
     },
   });
 

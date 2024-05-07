@@ -1,0 +1,24 @@
+@use "../../../utils/styles/function";
+
+.modal-bottom-sheet {
+  height: 70vh;
+  width: 100vw;
+  background-color: var(--color-card-bg);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1090;
+  border-radius: 5px 5px 0 0;
+  padding: 5px 0 0 5px;
+  @include function.column();
+
+  @include function.smooth();
+}
+
+.modal-bottom-sheet__open {
+  height: 70vh;
+}
+
+.modal-bottom-sheet__close {
+  height: 0;
+}

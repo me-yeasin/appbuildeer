@@ -1,0 +1,24 @@
+@use "../../../../../utils/styles/function";
+.review__modal-sheet {
+  width: 100vw;
+
+  .modal-sheet__bg {
+    @include function.column();
+
+    .review__social-media-list {
+      list-style: none;
+      width: 100vw;
+      @include function.row();
+      justify-content: center;
+      margin-top: 30px;
+    }
+  }
+}
+
+.review-item-list {
+  list-style: none;
+  @include function.row();
+  align-items: center;
+  width: 100vw;
+  overflow-x: scroll;
+}

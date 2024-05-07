@@ -1,0 +1,78 @@
+@use "../../../../../utils/styles/function";
+
+.review-item {
+  @include function.column();
+  align-items: center;
+  height: 98%;
+  min-width: 210px;
+  border-radius: 5px;
+  overflow: hidden;
+  padding: 0 10px 0 0;
+  margin: 10px 20px 20px 5px;
+  border-right: 1px solid gray;
+  @include function.smooth();
+
+  @include function.if-size(270px) {
+    min-width: 230px;
+  }
+
+  @include function.if-size(300px) {
+    min-width: 250px;
+  }
+
+  @include function.if-size(350px) {
+    min-width: 270px;
+  }
+
+  @include function.if-size(400px) {
+    min-width: 290px;
+  }
+
+  @include function.if-size(450px) {
+    min-width: 310px;
+  }
+
+  @include function.if-size(500px) {
+    min-width: 330px;
+  }
+
+  .review-item__text {
+    text-align: center;
+    width: 100%;
+  }
+
+  .review-item__client-info {
+    @include function.column();
+    align-items: center;
+
+    .review-item__client-contact-btn {
+      margin-top: 30px;
+      background-color: transparent;
+      border: 0.02rem solid var(--color-primary);
+      font-size: 0.75rem;
+      color: var(--color-primary);
+      padding: 3px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      @include function.smooth();
+
+      @include function.if-size(280px) {
+        padding: 4px 20px;
+        font-size: 0.78rem;
+      }
+      @include function.if-size(310px) {
+        padding: 5px 25px;
+        font-size: 0.8rem;
+      }
+      @include function.if-size(360px) {
+        padding: 6px 30px;
+      }
+      @include function.if-size(410px) {
+        padding: 6px 35px;
+      }
+      @include function.if-size(510px) {
+        padding: 7px 40px;
+      }
+    }
+  }
+}

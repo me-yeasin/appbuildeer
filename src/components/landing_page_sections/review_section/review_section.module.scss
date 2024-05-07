@@ -1,0 +1,17 @@
+@use "../../../utils/styles/function";
+
+.review-section {
+  .review-section__lower-title {
+    margin-top: 40px;
+    width: 100%;
+    text-align: center;
+  }
+  .review-section__subtitle {
+    width: 100%;
+    text-align: center;
+    margin-top: 5px;
+  }
+  .review-section__item-list {
+    margin-top: 50px;
+  }
+}

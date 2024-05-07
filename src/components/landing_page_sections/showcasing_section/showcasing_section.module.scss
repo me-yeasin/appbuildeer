@@ -1,0 +1,28 @@
+@use "../../../utils/styles/function";
+
+.showcasing-section {
+  @include function.column();
+  align-items: flex-start;
+
+  .showcasing-section__lower-title {
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .showcasing-section__subtitle {
+    width: 100%;
+    text-align: center;
+    margin-top: 4px;
+    padding: 0 10px;
+    @include function.smooth();
+
+    @include function.if-size(550px) {
+      padding: 0 20px;
+    }
+  }
+
+  .showcasing-section__item-list {
+    margin-top: 50px;
+  }
+}

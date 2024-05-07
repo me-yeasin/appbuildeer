@@ -1,0 +1,86 @@
+@use "../../../../../utils/styles/function";
+
+.client-info-item {
+  @include function.column();
+  align-items: center;
+
+  .review-item__client-avatar-container {
+    position: relative;
+
+    .review-item__avatar {
+      height: 70px;
+      width: 70px;
+      border-radius: 50%;
+      background-color: gray;
+      margin-top: 15px;
+      box-shadow: 0 2px 5px rgba($color: #000000, $alpha: 0.25);
+      overflow: hidden;
+      @include function.smooth();
+
+      @include function.if-size(300px) {
+        height: 90px;
+        width: 90px;
+      }
+
+      @include function.if-size(400px) {
+        height: 110px;
+        width: 110px;
+      }
+
+      .review-item__avatar-img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .review-item__client-brand {
+      height: 30px;
+      width: 30px;
+      background-color: var(--color-bg);
+      position: absolute;
+      bottom: -5px;
+      right: 0;
+      border-radius: 50%;
+      @include function.smooth();
+
+      @include function.if-size(300px) {
+        height: 37px;
+        width: 37px;
+        bottom: -8;
+      }
+
+      .review-item__client-brand__logo {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        padding: 1px;
+      }
+    }
+  }
+
+  .review-item__client-name {
+    font-size: 0.8rem;
+    margin-top: 10px;
+    text-align: center;
+    @include function.smooth();
+
+    @include function.if-size(300px) {
+      font-size: 0.85rem;
+    }
+
+    @include function.if-size(350px) {
+      font-size: 0.9rem;
+    }
+  }
+
+  .review-item__client-title {
+    font-size: 0.6rem;
+    margin-top: 5px;
+
+    .review-item__client-company-name {
+      font-weight: 700;
+      font-size: 0.62rem;
+    }
+  }
+}

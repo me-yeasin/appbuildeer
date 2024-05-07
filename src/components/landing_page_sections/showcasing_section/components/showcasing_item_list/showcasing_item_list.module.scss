@@ -1,0 +1,36 @@
+@use "../../../../../utils/styles/function";
+.showcasing-item-list {
+  @include function.row();
+  height: 300px;
+  width: 100vw;
+  align-items: center;
+  overflow: scroll;
+  list-style: none;
+  @include function.smooth();
+
+  @include function.if-size(390px) {
+    height: 320px;
+  }
+
+  .showcasing-item-list__link {
+    text-decoration: none;
+    color: var(--color-text);
+    margin: 0 15px;
+    .showcasing-item-list__link-graphics {
+      height: 100px;
+      width: 100px;
+      background-color: var(--color-primary);
+      border-radius: 50%;
+      @include function.row();
+      align-items: center;
+      justify-content: center;
+      box-shadow: 1px 1px 5px rgba($color: #000000, $alpha: 0.35);
+
+      .showcasing-item-list__link-graphics-text {
+        font-size: 0.85rem;
+        font-weight: 700;
+        color: var(--color-light);
+      }
+    }
+  }
+}

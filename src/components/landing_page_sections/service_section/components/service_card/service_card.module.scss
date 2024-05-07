@@ -1,0 +1,111 @@
+@use "../../../../../utils/styles/function";
+
+.service-card__link {
+  text-decoration: none;
+  color: var(--color-text);
+  .service-card-root {
+    height: 100%;
+    width: 100%;
+    @include function.column();
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    .bg-design {
+      height: 94%;
+      width: 95%;
+      background-color: rgba($color: #ff1e96, $alpha: 0.35);
+      position: absolute;
+      border-radius: 10px;
+      transform: skewY(1deg) skewX(1deg);
+      box-shadow: 0 0 4px 1px rgba($color: #ff1e96, $alpha: 0.35);
+      animation: bg-anim 10s linear infinite;
+
+      @keyframes bg-anim {
+        0% {
+          box-shadow: 0 0 4px 1px rgba($color: #ff1e96, $alpha: 0.35);
+          background-color: #ff1e96;
+          transform: skewY(1deg) skewX(1deg);
+        }
+
+        50% {
+          box-shadow: 0 0 4px 1px rgba($color: #4169e1, $alpha: 0.35);
+          background-color: #4169e1;
+          transform: skewY(-1deg) skewX(-1deg);
+        }
+
+        100% {
+          box-shadow: 0 0 4px 1px rgba($color: #ff1e96, $alpha: 0.35);
+          background-color: #ff1e96;
+          transform: skewY(1deg) skewX(1deg);
+        }
+      }
+    }
+
+    .card {
+      height: 95%;
+      width: 95%;
+      background-color: var(--color-card-bg);
+      border-radius: 10px;
+      position: absolute;
+      @include function.column();
+      align-items: center;
+      justify-content: center;
+      padding: 15px 5px;
+      overflow: hidden;
+
+      .card__icon-container {
+        height: 45px;
+        width: 45px;
+        margin: 10px 0;
+        svg {
+          height: 100%;
+          width: 100%;
+          color: var(--color-primary);
+        }
+      }
+
+      .card__title {
+        margin-top: 3px;
+        text-align: center;
+        font-weight: 800;
+        font-size: 0.85rem;
+        @include function.smooth();
+
+        @include function.if-size(329px) {
+          font-size: 0.7rem;
+        }
+        @include function.if-size(400px) {
+          font-size: 0.78rem;
+        }
+        @include function.if-size(450px) {
+          font-size: 0.83rem;
+        }
+        @include function.if-size(510px) {
+          font-size: 0.86rem;
+        }
+        @include function.if-size(548px) {
+          font-size: 0.7rem;
+        }
+        @include function.if-size(610px) {
+          font-size: 0.79rem;
+        }
+      }
+
+      .card__description {
+        font-size: 0.65rem;
+        text-align: center;
+        margin-top: 3px;
+      }
+      .learn-more-text {
+        position: absolute;
+        bottom: 5px;
+        right: 10px;
+        font-size: 0.65rem;
+        border-bottom: 0.00001rem solid var(--color-primary);
+        padding-bottom: 2px;
+        color: gray;
+      }
+    }
+  }
+}

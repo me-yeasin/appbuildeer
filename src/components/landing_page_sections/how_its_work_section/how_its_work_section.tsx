@@ -4,7 +4,7 @@ import BodyText from "@/common_components/text/body_text/body_text";
 import GradientText from "@/common_components/text/gradient_text/gradient_text";
 import LowerTitle from "@/common_components/text/lower_title/lower_title";
 import TitleText from "@/common_components/text/title_text/title_text";
-import HowItsWorkItemList from "@/components/how_its_work_item_list/how_its_work_item_list";
+import HowItsWorkItemList from "@/components/landing_page_sections/how_its_work_section/components/how_its_work_item_list/how_its_work_item_list";
 
 import classes from "./how_its_work_section.module.scss";
 

@@ -1,7 +1,7 @@
 import { memo } from "react";
 
 import BodyText from "@/common_components/text/body_text/body_text";
-import CubicImageSlider from "@/components/cubic_image_slider/cubic_image_slider";
+import CubicImageSlider from "@/components/sliders/cubic_image_slider/cubic_image_slider";
 import { IoIosMail } from "react-icons/io";
 import { TypeAnimation } from "react-type-animation";
 import classes from "./heading_section.module.scss";

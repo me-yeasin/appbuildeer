@@ -81,22 +81,3 @@
     }
   }
 }
-
-.override-overlay {
-  width: 85vw;
-  background-color: var(--color-drawer-bg);
-  backdrop-filter: blur(10px);
-  left: unset;
-  right: 0;
-  transform: scaleX(0);
-  transform-origin: right;
-  @include function.smooth();
-
-  @include function.small-tablet() {
-    display: none;
-  }
-}
-
-.override-overlay__active {
-  transform: scaleX(1);
-}

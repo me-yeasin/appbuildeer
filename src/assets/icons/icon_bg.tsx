@@ -28,13 +28,13 @@ const IconBg: React.FC<IconBgProps> = (props) => {
           gradientUnits="userSpaceOnUse"
         >
           <stop
-            stop-color="#FF1313"
-            stop-opacity={props.redOpacity ? `${props.redOpacity}` : "0.4"}
+            stopColor="#FF1313"
+            stopOpacity={props.redOpacity ? `${props.redOpacity}` : "0.4"}
           />
           <stop
             offset="1"
-            stop-color="#4169E1"
-            stop-opacity={props.blueOpacity ? `${props.blueOpacity}` : "0.7"}
+            stopColor="#4169E1"
+            stopOpacity={props.blueOpacity ? `${props.blueOpacity}` : "0.7"}
           />
         </linearGradient>
       </defs>

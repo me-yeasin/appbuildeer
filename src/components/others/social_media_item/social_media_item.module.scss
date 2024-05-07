@@ -1,0 +1,23 @@
+@use "../../../utils/styles/function";
+
+.review__social-media-item {
+  .review__social-media-item__link {
+    text-decoration: none;
+    color: var(--color-light);
+    .review__social-media-icon-container {
+      height: 38px;
+      width: 38px;
+      background-color: var(--color-primary);
+      border-radius: 50%;
+      @include function.column();
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 5px rgba($color: #000000, $alpha: 0.25);
+
+      svg {
+        height: 55%;
+        width: 55%;
+      }
+    }
+  }
+}
