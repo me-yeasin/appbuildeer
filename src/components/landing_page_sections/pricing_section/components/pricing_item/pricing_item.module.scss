@@ -1,164 +1,161 @@
 @use "../../../../../utils/styles/function";
 
-.pricing-item {
-  width: 100vw;
+.pricing-item-card {
+  width: 250px;
+  min-width: 250px;
+  background-color: var(--color-card-bg);
   @include function.column();
   align-items: center;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba($color: #000000, $alpha: 0.35);
+  position: relative;
+  padding: 5px 0;
+  overflow: hidden;
+  margin: 0 10px;
+  @include function.smooth();
 
-  .pricing-item-card {
-    width: 250px;
-    background-color: var(--color-card-bg);
+  .pricing-item-card__plan-name {
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 700;
+    height: 30px;
     @include function.column();
     align-items: center;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba($color: #000000, $alpha: 0.35);
-    position: relative;
-    padding: 5px 0;
-    overflow: hidden;
+    justify-content: center;
+    margin-top: 8px;
+  }
 
-    .pricing-item-card__plan-name {
-      width: 100%;
-      text-align: center;
-      font-size: 1rem;
-      font-weight: 700;
-      height: 30px;
-      @include function.column();
-      align-items: center;
-      justify-content: center;
-      margin-top: 8px;
+  .pricing-item-card__plan-name-dark-mode {
+    color: var(--color-light);
+  }
+
+  .pricing-item-card__change-plan-btn {
+    border: none;
+    height: 30px;
+    width: 100%;
+    @include function.row();
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: transparent;
+    margin-top: 7px;
+
+    .change-plan-btn__text {
+      font-size: 0.77rem;
+      font-weight: 600;
+      color: var(--color-primary);
     }
 
-    .pricing-item-card__plan-name-dark-mode {
+    svg {
+      height: 18px;
+      width: 18px;
+      color: var(--color-primary);
+      margin: 0 0 0 5px;
+    }
+  }
+  .pricing-item-card__price-container {
+    @include function.row();
+    align-items: center;
+    margin-top: 10px;
+
+    .hidden-price {
+      font-size: 1rem;
+      color: gray;
+      position: relative;
+
+      &::before {
+        content: "/";
+        position: absolute;
+        top: -14px;
+        left: 15px;
+        color: var(--color-tertiary);
+        font-size: 2.5rem;
+        transform: rotateZ(45deg);
+        font-weight: 400;
+      }
+    }
+
+    .real-price {
+      margin-left: 15px;
+    }
+
+    .real-price-dark-mode {
       color: var(--color-light);
     }
+  }
 
-    .pricing-item-card__change-plan-btn {
-      border: none;
-      height: 30px;
+  .pricing-item-card__features {
+    width: 100%;
+    margin-top: 30px;
+
+    .feature-container {
       width: 100%;
+      text-align: center;
       @include function.row();
       align-items: center;
       justify-content: center;
-      cursor: pointer;
+      margin-bottom: 8px;
+
+      .feature-icon {
+        height: 17px;
+        width: 17px;
+      }
+
+      .feature-icon-dark-mode {
+        color: var(--color-light);
+      }
+
+      .feature-txt {
+        font-size: 0.75rem;
+        font-weight: 500;
+        margin-left: 6px;
+      }
+
+      .feature-txt-dark-mode {
+        color: var(--color-light);
+      }
+    }
+  }
+
+  .pricing-item-card__customized-btn-container {
+    width: 100%;
+    margin-top: 40px;
+    text-align: center;
+
+    .pricing-item-card__customized-btn {
       background-color: transparent;
-      margin-top: 7px;
-
-      .change-plan-btn__text {
-        font-size: 0.77rem;
-        font-weight: 600;
-        color: var(--color-primary);
-      }
-
-      svg {
-        height: 18px;
-        width: 18px;
-        color: var(--color-primary);
-        margin: 0 0 0 5px;
-      }
-    }
-    .pricing-item-card__price-container {
-      @include function.row();
-      align-items: center;
-      margin-top: 10px;
-
-      .hidden-price {
-        font-size: 1rem;
-        color: gray;
-        position: relative;
-
-        &::before {
-          content: "/";
-          position: absolute;
-          top: -14px;
-          left: 15px;
-          color: var(--color-tertiary);
-          font-size: 2.5rem;
-          transform: rotateZ(45deg);
-          font-weight: 400;
-        }
-      }
-
-      .real-price {
-        margin-left: 15px;
-      }
-
-      .real-price-dark-mode {
-        color: var(--color-light);
-      }
+      border: 2px solid var(--color-primary);
+      padding: 6px 9px;
+      border-radius: 10px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
     }
 
-    .pricing-item-card__features {
-      width: 100%;
-      margin-top: 30px;
-
-      .feature-container {
-        width: 100%;
-        text-align: center;
-        @include function.row();
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 8px;
-
-        .feature-icon {
-          height: 17px;
-          width: 17px;
-        }
-
-        .feature-icon-dark-mode {
-          color: var(--color-light);
-        }
-
-        .feature-txt {
-          font-size: 0.75rem;
-          font-weight: 500;
-          margin-left: 6px;
-        }
-
-        .feature-txt-dark-mode {
-          color: var(--color-light);
-        }
-      }
-    }
-
-    .pricing-item-card__customized-btn-container {
-      width: 100%;
-      margin-top: 40px;
-      text-align: center;
-
-      .pricing-item-card__customized-btn {
-        background-color: transparent;
-        border: 2px solid var(--color-primary);
-        padding: 6px 9px;
-        border-radius: 10px;
-        font-size: 0.8rem;
-        font-weight: 600;
-        cursor: pointer;
-      }
-
-      .pricing-item-card__customized-btn-dark-mode {
-        color: var(--color-light);
-      }
-    }
-
-    .pricing-item-card__bg-icon {
-      height: 150px;
-      width: 150px;
-      position: absolute;
-      top: -51px;
-      left: -51px;
-      transform: rotateZ(135deg);
-      z-index: 0;
-
-      svg {
-        height: 100%;
-        width: 100%;
-        color: var(--color-tertiary);
-        opacity: 0.2;
-      }
+    .pricing-item-card__customized-btn-dark-mode {
+      color: var(--color-light);
     }
   }
 
-  .pricing-item-card__dark-mode {
-    background-color: rgb(35, 35, 35);
+  .pricing-item-card__bg-icon {
+    height: 150px;
+    width: 150px;
+    position: absolute;
+    top: -51px;
+    left: -51px;
+    transform: rotateZ(135deg);
+    z-index: 0;
+
+    svg {
+      height: 100%;
+      width: 100%;
+      color: var(--color-tertiary);
+      opacity: 0.2;
+    }
   }
+}
+
+.pricing-item-card__dark-mode {
+  background-color: rgb(35, 35, 35);
 }

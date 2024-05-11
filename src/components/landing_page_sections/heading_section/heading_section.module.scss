@@ -7,18 +7,8 @@
   align-items: center;
 
   .heading-image-slider {
-    height: 50%;
+    height: 55%;
     margin-bottom: 15px;
-
-    @include function.if-size(250px) {
-      height: 50%;
-    }
-    @include function.if-size(340px) {
-      margin-bottom: 30px;
-    }
-    @include function.if-size(400px) {
-      height: 55%;
-    }
   }
 
   .title-text-container {
@@ -27,17 +17,10 @@
     margin-bottom: 20px;
 
     .heading-text {
-      font-size: 1.2rem;
+      font-size: 1.4rem;
       text-align: center;
-      font-weight: 800;
+      font-weight: 900;
       @include function.smooth();
-
-      @include function.if-size(330px) {
-        font-size: 1.3rem;
-      }
-      @include function.if-size(540px) {
-        font-size: 1.5rem;
-      }
 
       span {
         background: linear-gradient(
@@ -52,7 +35,7 @@
     }
 
     .sub-title__text {
-      margin-top: 10px;
+      margin-top: 3px;
       max-width: 100%;
       text-align: center;
 
@@ -73,7 +56,7 @@
       color: var(--color-light);
       box-shadow: 0 2px 5px rgba($color: #000000, $alpha: 0.35);
       cursor: pointer;
-      margin-top: 20px;
+      margin-top: 13px;
       @include function.smooth();
 
       @include function.if-size(350px) {

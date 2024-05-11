@@ -4,4 +4,17 @@
   display: inline-block;
   border-bottom: 3px solid var(--color-tertiary);
   padding: 0 0 5px 15px;
+  font-size: 1.25rem;
+
+  @include function.small-phone() {
+    font-size: 1.25rem;
+  }
+
+  @include function.big-phone() {
+    font-size: 1.975rem;
+  }
+
+  @include function.small-tablet() {
+    font-size: 1.5rem;
+  }
 }

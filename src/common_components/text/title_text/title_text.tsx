@@ -7,9 +7,9 @@ interface TitleTextProps {
 
 const TitleText: React.FC<TitleTextProps> = (props) => {
   return (
-    <h3 className={`${props.className} ${classes["title-text"]}`}>
+    <h1 className={`${props.className} ${classes["title-text"]}`}>
       {props.children}
-    </h3>
+    </h1>
   );
 };
 

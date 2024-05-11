@@ -1,6 +1,97 @@
 @use "../../../../../utils/styles/function";
 
 .pricing-slider {
-  width: 100vw;
-  margin-top: 50px;
+  position: relative;
+
+  .slide-items {
+    width: 100vw;
+    margin-top: 50px;
+    @include function.row();
+    align-content: center;
+    justify-content: center;
+    // overflow-x: scroll;
+    @include function.smooth();
+    overflow: hidden;
+
+    .pricing-item-left-active {
+      transform: translateX(100%);
+      z-index: 2;
+      box-shadow: 2px 2px 10px rgba($color: #000000, $alpha: 0.35);
+    }
+
+    .pricing-item-left-deactive {
+      transform: translateX(0);
+      z-index: 0;
+    }
+
+    .pricing-item-right-active {
+      transform: translateX(-100%);
+      z-index: 2;
+      box-shadow: 2px 2px 10px rgba($color: #000000, $alpha: 0.35);
+    }
+
+    .pricing-item-right-deactive {
+      transform: translateX(0);
+      z-index: 0;
+    }
+  }
+
+  .pricing-slider__side-btn-container {
+    .side-btn__left {
+      background-color: rgba(65, 105, 225, 0.25);
+      border: none;
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      @include function.column();
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 5px rgba($color: #000000, $alpha: 0.35);
+      position: absolute;
+      top: 50%;
+      left: 0;
+      z-index: 10;
+      transform: translateY(-50%);
+      @include function.smooth();
+
+      svg {
+        height: 15px;
+        width: 15px;
+        opacity: 0.5;
+      }
+    }
+    .side-btn__left-deactive {
+      visibility: hidden;
+      transform: scale(0);
+    }
+
+    .side-btn__right {
+      background-color: rgba(65, 105, 225, 0.25);
+      border: none;
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      @include function.column();
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 5px rgba($color: #000000, $alpha: 0.35);
+      position: absolute;
+      top: 50%;
+      right: 0;
+      z-index: 10;
+      transform: translateY(-50%);
+      @include function.smooth();
+
+      svg {
+        height: 15px;
+        width: 15px;
+        opacity: 0.5;
+        transform: rotateZ(180deg);
+      }
+    }
+    .side-btn__right-deactive {
+      visibility: hidden;
+      transform: scale(0);
+    }
+  }
 }

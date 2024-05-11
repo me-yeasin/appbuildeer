@@ -11,6 +11,7 @@ import classes from "./pricing_item.module.scss";
 
 interface PricingItemProps {
   isPricingCardDarkMode: boolean;
+  className?: string;
 }
 
 const PricingItem: React.FC<PricingItemProps> = (props) => {
@@ -82,80 +83,76 @@ const PricingItem: React.FC<PricingItemProps> = (props) => {
   ];
 
   return (
-    <div className={classes["pricing-item"]}>
-      <div
+    <div
+      className={`${props.className} ${
+        props.isPricingCardDarkMode && classes["pricing-item-card__dark-mode"]
+      } ${classes["pricing-item-card"]}`}
+    >
+      {/* BackGround Image  */}
+      <div className={classes["pricing-item-card__bg-icon"]}>
+        {devOptionsList[selectedIndex].icon}
+      </div>
+
+      <p
         className={`${
-          props.isPricingCardDarkMode && classes["pricing-item-card__dark-mode"]
-        } ${classes["pricing-item-card"]}`}
+          props.isPricingCardDarkMode &&
+          classes["pricing-item-card__plan-name-dark-mode"]
+        } ${classes["pricing-item-card__plan-name"]}`}
       >
-        {/* BackGround Image  */}
-        <div className={classes["pricing-item-card__bg-icon"]}>
-          {devOptionsList[selectedIndex].icon}
-        </div>
-
-        <p
-          className={`${
-            props.isPricingCardDarkMode &&
-            classes["pricing-item-card__plan-name-dark-mode"]
-          } ${classes["pricing-item-card__plan-name"]}`}
-        >
-          Starter
+        Starter
+      </p>
+      <button
+        onClick={() => setToggleOptions(true)}
+        className={classes["pricing-item-card__change-plan-btn"]}
+      >
+        <p className={classes["change-plan-btn__text"]}>
+          {devOptionsList[selectedIndex].name}
         </p>
-        <button
-          onClick={() => setToggleOptions(true)}
-          className={classes["pricing-item-card__change-plan-btn"]}
+        <MdKeyboardArrowDown />
+      </button>
+      <PricingOverlayOptions
+        onClick={selectedIndexHandler}
+        itemList={devOptionsList}
+        toggleOptions={toggleOptions}
+      />
+      <div className={classes["pricing-item-card__price-container"]}>
+        <h1 className={classes["hidden-price"]}>$100</h1>
+        <h1
+          className={`${
+            props.isPricingCardDarkMode && classes["real-price-dark-mode"]
+          } ${classes["real-price"]}`}
         >
-          <p className={classes["change-plan-btn__text"]}>
-            {devOptionsList[selectedIndex].name}
-          </p>
-          <MdKeyboardArrowDown />
-        </button>
-        <PricingOverlayOptions
-          onClick={selectedIndexHandler}
-          itemList={devOptionsList}
-          toggleOptions={toggleOptions}
-        />
-        <div className={classes["pricing-item-card__price-container"]}>
-          <h1 className={classes["hidden-price"]}>$100</h1>
-          <h1
-            className={`${
-              props.isPricingCardDarkMode && classes["real-price-dark-mode"]
-            } ${classes["real-price"]}`}
-          >
-            $80
-          </h1>
-        </div>
+          $80
+        </h1>
+      </div>
 
-        <div className={classes["pricing-item-card__features"]}>
-          {devOptionsList[selectedIndex].features?.map((item, _) => (
-            <div className={classes["feature-container"]}>
-              <CiCircleCheck
-                className={`${
-                  props.isPricingCardDarkMode &&
-                  classes["feature-icon-dark-mode"]
-                } ${classes["feature-icon"]}`}
-              />
-              <p
-                className={`${
-                  props.isPricingCardDarkMode &&
-                  classes["feature-txt-dark-mode"]
-                } ${classes["feature-txt"]}`}
-              >
-                {item}
-              </p>
-            </div>
-          ))}
-        </div>
-        <div className={classes["pricing-item-card__customized-btn-container"]}>
-          <button
-            className={` ${
-              props.isPricingCardDarkMode &&
-              classes["pricing-item-card__customized-btn-dark-mode"]
-            } ${classes["pricing-item-card__customized-btn"]}`}
-          >
-            Customize Now
-          </button>
-        </div>
+      <div className={classes["pricing-item-card__features"]}>
+        {devOptionsList[selectedIndex].features?.map((item, index) => (
+          <div key={index} className={classes["feature-container"]}>
+            <CiCircleCheck
+              className={`${
+                props.isPricingCardDarkMode && classes["feature-icon-dark-mode"]
+              } ${classes["feature-icon"]}`}
+            />
+            <p
+              className={`${
+                props.isPricingCardDarkMode && classes["feature-txt-dark-mode"]
+              } ${classes["feature-txt"]}`}
+            >
+              {item}
+            </p>
+          </div>
+        ))}
+      </div>
+      <div className={classes["pricing-item-card__customized-btn-container"]}>
+        <button
+          className={` ${
+            props.isPricingCardDarkMode &&
+            classes["pricing-item-card__customized-btn-dark-mode"]
+          } ${classes["pricing-item-card__customized-btn"]}`}
+        >
+          Customize Now
+        </button>
       </div>
     </div>
   );
