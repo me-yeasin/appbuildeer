@@ -1,17 +1,20 @@
 import { useState } from "react";
 
-import { FaAndroid } from "react-icons/fa";
-import { MdKeyboardArrowDown, MdOutlineWebStories } from "react-icons/md";
+import { MdKeyboardArrowDown } from "react-icons/md";
 import PricingOverlayOptions from "../pricing_overlay_options/pricing_overlay_options";
 
-import { CgWebsite } from "react-icons/cg";
-import { CiCircleCheck, CiServer } from "react-icons/ci";
-import { SiIos } from "react-icons/si";
+import { DeveloperOptionsItem } from "@/data/pricing_data/pricing_data";
+import { CiCircleCheck } from "react-icons/ci";
 import classes from "./pricing_item.module.scss";
 
 interface PricingItemProps {
   isPricingCardDarkMode: boolean;
   className?: string;
+  planName: string;
+  planSlogan: string;
+  previousPrice: string;
+  currentPrice: string;
+  pricingItemList: DeveloperOptionsItem[];
 }
 
 const PricingItem: React.FC<PricingItemProps> = (props) => {
@@ -23,65 +26,6 @@ const PricingItem: React.FC<PricingItemProps> = (props) => {
     setToggleOptions(false);
   };
 
-  type DeveloperOptionsItem = {
-    name: string;
-    icon: React.ReactNode;
-    features?: string[];
-  };
-
-  const devOptionsList: DeveloperOptionsItem[] = [
-    {
-      name: "Android App Development",
-      icon: <FaAndroid />,
-      features: [
-        "5 Page App",
-        "Zip and APK File",
-        "Android Studio",
-        "Upload to Play Store",
-      ],
-    },
-    {
-      name: "IOS App Development",
-      icon: <SiIos />,
-      features: [
-        "5 Page App",
-        "Zip and IOS File",
-        "Android Studio",
-        "Upload to Play Store",
-      ],
-    },
-    {
-      name: "Web App Development",
-      icon: <CgWebsite />,
-      features: [
-        "5 Page App",
-        "Zip and APK File",
-        "Android Studio",
-        "Upload to Play Store",
-      ],
-    },
-    {
-      name: "Cross Platform App Development",
-      icon: <MdOutlineWebStories />,
-      features: [
-        "5 Page App",
-        "Zip and APK File",
-        "Android Studio",
-        "Upload to Play Store",
-      ],
-    },
-    {
-      name: "BackEnd App Development",
-      icon: <CiServer />,
-      features: [
-        "5 Page App",
-        "Zip and APK File",
-        "Android Studio",
-        "Upload to Play Store",
-      ],
-    },
-  ];
-
   return (
     <div
       className={`${props.className} ${
@@ -90,7 +34,7 @@ const PricingItem: React.FC<PricingItemProps> = (props) => {
     >
       {/* BackGround Image  */}
       <div className={classes["pricing-item-card__bg-icon"]}>
-        {devOptionsList[selectedIndex].icon}
+        {props.pricingItemList[selectedIndex].icon}
       </div>
 
       <p
@@ -99,35 +43,38 @@ const PricingItem: React.FC<PricingItemProps> = (props) => {
           classes["pricing-item-card__plan-name-dark-mode"]
         } ${classes["pricing-item-card__plan-name"]}`}
       >
-        Starter
+        {props.planName}
+      </p>
+      <p className={classes["pricing-item-card__plan-slogan"]}>
+        {props.planSlogan}
       </p>
       <button
         onClick={() => setToggleOptions(true)}
         className={classes["pricing-item-card__change-plan-btn"]}
       >
         <p className={classes["change-plan-btn__text"]}>
-          {devOptionsList[selectedIndex].name}
+          {props.pricingItemList[selectedIndex].name}
         </p>
         <MdKeyboardArrowDown />
       </button>
       <PricingOverlayOptions
         onClick={selectedIndexHandler}
-        itemList={devOptionsList}
+        itemList={props.pricingItemList}
         toggleOptions={toggleOptions}
       />
       <div className={classes["pricing-item-card__price-container"]}>
-        <h1 className={classes["hidden-price"]}>$100</h1>
+        <h1 className={classes["hidden-price"]}>${props.previousPrice}</h1>
         <h1
           className={`${
             props.isPricingCardDarkMode && classes["real-price-dark-mode"]
           } ${classes["real-price"]}`}
         >
-          $80
+          ${props.currentPrice}
         </h1>
       </div>
 
       <div className={classes["pricing-item-card__features"]}>
-        {devOptionsList[selectedIndex].features?.map((item, index) => (
+        {props.pricingItemList[selectedIndex].features?.map((item, index) => (
           <div key={index} className={classes["feature-container"]}>
             <CiCircleCheck
               className={`${

@@ -26,6 +26,13 @@
     margin-top: 8px;
   }
 
+  .pricing-item-card__plan-slogan {
+    font-size: 0.7rem;
+    color: var(--color-secondary);
+    opacity: 0.65;
+    text-align: center;
+  }
+
   .pricing-item-card__plan-name-dark-mode {
     color: var(--color-light);
   }
@@ -88,18 +95,21 @@
   .pricing-item-card__features {
     width: 100%;
     margin-top: 30px;
+    padding: 0 3px 0 8px;
 
     .feature-container {
       width: 100%;
       text-align: center;
       @include function.row();
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       margin-bottom: 8px;
 
       .feature-icon {
         height: 17px;
         width: 17px;
+        min-height: 17px;
+        min-width: 17px;
       }
 
       .feature-icon-dark-mode {
@@ -110,6 +120,7 @@
         font-size: 0.75rem;
         font-weight: 500;
         margin-left: 6px;
+        text-align: start;
       }
 
       .feature-txt-dark-mode {

@@ -3,6 +3,11 @@ import { useState } from "react";
 import { IoIosArrowBack } from "react-icons/io";
 import PricingItem from "../pricing_item/pricing_item";
 
+import {
+  EnterPricePricingPlan,
+  GrowthPricingPlan,
+  StarterPricingPlan,
+} from "@/data/pricing_data/pricing_data";
 import classes from "./pricing_list.module.scss";
 
 interface PricingListProps {}
@@ -31,24 +36,39 @@ const PricingList: React.FC<PricingListProps> = (props) => {
     <div className={classes["pricing-slider"]}>
       <div className={classes["slide-items"]}>
         <PricingItem
+          planName="Starter"
+          previousPrice="45"
+          currentPrice="28"
           isPricingCardDarkMode={false}
           className={`${
             isLeftOpen
               ? classes["pricing-item-left-active"]
               : classes["pricing-item-left-deactive"]
           }`}
+          pricingItemList={StarterPricingPlan}
+          planSlogan="Kickstart Your Journey"
         />
         <PricingItem
-          isPricingCardDarkMode={false}
+          planName="Growth"
+          previousPrice="120"
+          currentPrice="90"
+          isPricingCardDarkMode={true}
           className={classes["pricing-item-center"]}
+          pricingItemList={GrowthPricingPlan}
+          planSlogan="Elevate Your Business"
         />
         <PricingItem
+          planName="Enterprise"
+          previousPrice="465"
+          currentPrice="410"
           isPricingCardDarkMode={false}
           className={`${
             isRightOpen
               ? classes["pricing-item-right-active"]
               : classes["pricing-item-right-deactive"]
           }`}
+          pricingItemList={EnterPricePricingPlan}
+          planSlogan="Unleash Full Potential"
         />
       </div>
       <div className={classes["pricing-slider__side-btn-container"]}>

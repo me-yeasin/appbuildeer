@@ -57,7 +57,8 @@
       svg {
         height: 15px;
         width: 15px;
-        opacity: 0.5;
+        // opacity: 0.5;
+        color: gray;
       }
     }
     .side-btn__left-deactive {
@@ -85,8 +86,9 @@
       svg {
         height: 15px;
         width: 15px;
-        opacity: 0.5;
+        // opacity: 0.5;
         transform: rotateZ(180deg);
+        color: gray;
       }
     }
     .side-btn__right-deactive {
