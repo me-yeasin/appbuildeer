@@ -9,7 +9,9 @@ import {
 export type DeveloperOptionsItem = {
   name: string;
   icon: React.ReactNode;
-  features?: string[];
+  features: string[];
+  previosPrice: number;
+  currentPrice: number;
 };
 
 export const StarterPricingPlan: DeveloperOptionsItem[] = [
@@ -23,6 +25,8 @@ export const StarterPricingPlan: DeveloperOptionsItem[] = [
       "Basic analytics for app performance",
       "Limited number of revisions",
     ],
+    currentPrice: 80,
+    previosPrice: 100,
   },
   {
     icon: IosIcon,
@@ -34,6 +38,8 @@ export const StarterPricingPlan: DeveloperOptionsItem[] = [
       "Basic analytics for app performance",
       "Limited number of revisions",
     ],
+    currentPrice: 80,
+    previosPrice: 100,
   },
   {
     icon: WebIcon,
@@ -45,6 +51,8 @@ export const StarterPricingPlan: DeveloperOptionsItem[] = [
       "Basic analytics for app performance",
       "Limited number of revisions",
     ],
+    currentPrice: 80,
+    previosPrice: 100,
   },
   {
     icon: CrossPlatformIcon,
@@ -56,6 +64,8 @@ export const StarterPricingPlan: DeveloperOptionsItem[] = [
       "Basic analytics for app performance",
       "Limited number of revisions",
     ],
+    currentPrice: 80,
+    previosPrice: 100,
   },
   {
     icon: BackEndIcon,
@@ -67,6 +77,8 @@ export const StarterPricingPlan: DeveloperOptionsItem[] = [
       "Basic analytics for app performance",
       "Limited number of revisions",
     ],
+    currentPrice: 80,
+    previosPrice: 100,
   },
 ];
 
@@ -81,6 +93,8 @@ export const GrowthPricingPlan: DeveloperOptionsItem[] = [
       "Basic analytics for app performance",
       "Limited number of revisions",
     ],
+    currentPrice: 80,
+    previosPrice: 100,
   },
   {
     icon: IosIcon,
@@ -92,6 +106,8 @@ export const GrowthPricingPlan: DeveloperOptionsItem[] = [
       "Basic analytics for app performance",
       "Limited number of revisions",
     ],
+    currentPrice: 80,
+    previosPrice: 100,
   },
   {
     icon: WebIcon,
@@ -103,6 +119,8 @@ export const GrowthPricingPlan: DeveloperOptionsItem[] = [
       "Basic analytics for app performance",
       "Limited number of revisions",
     ],
+    currentPrice: 80,
+    previosPrice: 100,
   },
   {
     icon: CrossPlatformIcon,
@@ -114,6 +132,8 @@ export const GrowthPricingPlan: DeveloperOptionsItem[] = [
       "Basic analytics for app performance",
       "Limited number of revisions",
     ],
+    currentPrice: 80,
+    previosPrice: 100,
   },
   {
     icon: BackEndIcon,
@@ -125,6 +145,8 @@ export const GrowthPricingPlan: DeveloperOptionsItem[] = [
       "Basic analytics for app performance",
       "Limited number of revisions",
     ],
+    currentPrice: 80,
+    previosPrice: 100,
   },
 ];
 
@@ -139,6 +161,8 @@ export const EnterPricePricingPlan: DeveloperOptionsItem[] = [
       "Basic analytics for app performance",
       "Limited number of revisions",
     ],
+    currentPrice: 80,
+    previosPrice: 100,
   },
   {
     icon: IosIcon,
@@ -150,6 +174,8 @@ export const EnterPricePricingPlan: DeveloperOptionsItem[] = [
       "Basic analytics for app performance",
       "Limited number of revisions",
     ],
+    currentPrice: 80,
+    previosPrice: 100,
   },
   {
     icon: WebIcon,
@@ -161,6 +187,8 @@ export const EnterPricePricingPlan: DeveloperOptionsItem[] = [
       "Basic analytics for app performance",
       "Limited number of revisions",
     ],
+    currentPrice: 80,
+    previosPrice: 100,
   },
   {
     icon: CrossPlatformIcon,
@@ -172,6 +200,8 @@ export const EnterPricePricingPlan: DeveloperOptionsItem[] = [
       "Basic analytics for app performance",
       "Limited number of revisions",
     ],
+    currentPrice: 80,
+    previosPrice: 100,
   },
   {
     icon: BackEndIcon,
@@ -183,5 +213,7 @@ export const EnterPricePricingPlan: DeveloperOptionsItem[] = [
       "Basic analytics for app performance",
       "Limited number of revisions",
     ],
+    currentPrice: 80,
+    previosPrice: 100,
   },
 ];

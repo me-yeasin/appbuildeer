@@ -1,0 +1,108 @@
+@use "../../../utils/styles/function";
+
+.about-us-section {
+  // height: 120vh;
+  width: 100vw;
+  margin-bottom: 50px;
+
+  .about-us-section__lower-title {
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  .about-us-section__subtitle-text-shrinked {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    line-clamp: 6;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    @include function.smooth();
+  }
+
+  .about-us-section__subtitle-text-expanded {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    @include function.smooth();
+  }
+
+  .about-us-section__expand-txt-btn-container {
+    width: 100%;
+    margin-top: 10px;
+    @include function.row();
+    justify-content: center;
+
+    .about-us-section__expand-txt-btn {
+      text-align: center;
+      border: none;
+      background-color: var(--color-primary);
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      @include function.row();
+      align-items: center;
+      justify-content: center;
+      opacity: 0.85;
+      box-shadow: 0 2px 3px rgba($color: #000000, $alpha: 0.35);
+      animation: btn-anim 1s ease-in-out infinite alternate;
+      transform-origin: center;
+      @include function.smooth();
+
+      @include function.big-phone() {
+        height: 50px;
+        width: 50px;
+      }
+
+      .about-us-section__expand-txt-btn__icon {
+        transform: rotateZ(0);
+        transform-origin: center;
+        @include function.smooth();
+
+        svg {
+          color: var(--color-light);
+          height: 17px;
+          width: 17px;
+          transform: inherit;
+          animation: arrow-anim 1s ease-in-out infinite alternate;
+          @include function.smooth();
+
+          @keyframes arrow-anim {
+            from {
+              transform: translateY(-3px);
+            }
+            to {
+              transform: translateY(3px);
+            }
+          }
+        }
+      }
+
+      .about-us-section__expand-txt-btn__icon-expanded {
+        transform: rotateZ(180deg);
+      }
+      .about-us-section__expand-txt-btn__icon-shrinked {
+        transform: rotateZ(0);
+      }
+
+      @keyframes btn-anim {
+        from {
+          transform: translateY(0);
+        }
+        to {
+          transform: translateY(5px);
+        }
+      }
+    }
+  }
+
+  .about-us-section__lower-title__2nd {
+    width: 100%;
+    text-align: center;
+    margin-top: 40px;
+  }
+}

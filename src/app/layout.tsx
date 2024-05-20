@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import TopNavBar from "@/components/top_nav_bar/top_nav_bar";
 import StoreProvider from "../store/store_provider";
 
+import MainFooter from "@/components/main_footer/main_footer";
 import "./globals.scss";
 
 export const metadata: Metadata = {
@@ -23,7 +24,7 @@ export default function RootLayout({
           <div id="overlay"></div>
           <TopNavBar />
           <main id="main">{children}</main>
-          <footer id="footer"></footer>
+          <MainFooter id="footer" />
         </body>
       </StoreProvider>
     </html>

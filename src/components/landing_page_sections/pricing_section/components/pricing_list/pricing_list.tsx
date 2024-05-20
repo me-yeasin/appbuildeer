@@ -37,8 +37,6 @@ const PricingList: React.FC<PricingListProps> = (props) => {
       <div className={classes["slide-items"]}>
         <PricingItem
           planName="Starter"
-          previousPrice="45"
-          currentPrice="28"
           isPricingCardDarkMode={false}
           className={`${
             isLeftOpen
@@ -50,8 +48,6 @@ const PricingList: React.FC<PricingListProps> = (props) => {
         />
         <PricingItem
           planName="Growth"
-          previousPrice="120"
-          currentPrice="90"
           isPricingCardDarkMode={true}
           className={classes["pricing-item-center"]}
           pricingItemList={GrowthPricingPlan}
@@ -59,8 +55,6 @@ const PricingList: React.FC<PricingListProps> = (props) => {
         />
         <PricingItem
           planName="Enterprise"
-          previousPrice="465"
-          currentPrice="410"
           isPricingCardDarkMode={false}
           className={`${
             isRightOpen

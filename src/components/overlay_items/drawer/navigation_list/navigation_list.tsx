@@ -51,6 +51,15 @@ const NavigationList: React.FC<NavigationListProps> = (props) => {
         </li>
         <li className={classes["drawer-navigation__item"]}>
           <NavigationButton
+            isActive={selectedButtonName === "Pricing & Plans"}
+            onClick={() => {
+              onButtonClickHandler("Pricing & Plans");
+            }}
+            buttonName="Pricing & Plans"
+          />
+        </li>
+        <li className={classes["drawer-navigation__item"]}>
+          <NavigationButton
             isActive={selectedButtonName === "Privacy Policy"}
             onClick={() => {
               onButtonClickHandler("Privacy Policy");

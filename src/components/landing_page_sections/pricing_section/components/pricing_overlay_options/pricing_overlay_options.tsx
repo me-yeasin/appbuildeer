@@ -16,7 +16,7 @@ const PricingOverlayOptions: React.FC<PricingOverlayOptionsProps> = (props) => {
       <ul className={classes["pricing-item-card__dev-list"]}>
         {props.itemList.map((item, index) => {
           return (
-            <li className={classes["pricing-item-card__dev-item"]}>
+            <li key={index} className={classes["pricing-item-card__dev-item"]}>
               <button
                 onClick={() => props.onClick(index)}
                 className={classes["pricing-item-card__dev-item-btn"]}

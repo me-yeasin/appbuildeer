@@ -8,6 +8,8 @@ import ServiceSection from "@/components/landing_page_sections/service_section/s
 import ShowcasingSection from "@/components/landing_page_sections/showcasing_section/showcasing_section";
 import HowItsWorkSection from "../../components/landing_page_sections/how_its_work_section/how_its_work_section";
 
+import AboutUsSection from "@/components/landing_page_sections/about_us_section/about_us_section";
+import BlogSection from "@/components/landing_page_sections/blog_section/blog_section";
 import PricingSection from "@/components/landing_page_sections/pricing_section/pricing_section";
 import ReviewSection from "@/components/landing_page_sections/review_section/review_sectino";
 import "swiper/css";
@@ -37,6 +39,8 @@ const HomeScreen: React.FC<HomeScreenProps> = (props) => {
       <ShowcasingSection className={classes["showcasing-section-override"]} />
       <ReviewSection className={classes["review-section-override"]} />
       <PricingSection className={classes["pricing-section-override"]} />
+      <AboutUsSection />
+      <BlogSection />
     </>
   );
 };

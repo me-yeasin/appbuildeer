@@ -12,8 +12,6 @@ interface PricingItemProps {
   className?: string;
   planName: string;
   planSlogan: string;
-  previousPrice: string;
-  currentPrice: string;
   pricingItemList: DeveloperOptionsItem[];
 }
 
@@ -63,13 +61,15 @@ const PricingItem: React.FC<PricingItemProps> = (props) => {
         toggleOptions={toggleOptions}
       />
       <div className={classes["pricing-item-card__price-container"]}>
-        <h1 className={classes["hidden-price"]}>${props.previousPrice}</h1>
+        <h1 className={classes["hidden-price"]}>
+          ${props.pricingItemList[selectedIndex].previosPrice}
+        </h1>
         <h1
           className={`${
             props.isPricingCardDarkMode && classes["real-price-dark-mode"]
           } ${classes["real-price"]}`}
         >
-          ${props.currentPrice}
+          ${props.pricingItemList[selectedIndex].currentPrice}
         </h1>
       </div>
 

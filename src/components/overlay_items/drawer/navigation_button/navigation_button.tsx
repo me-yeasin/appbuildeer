@@ -45,6 +45,7 @@ const NavigationButton: React.FC<NavigationButtonProps> = (props) => {
             } ${classes["drawer-navigation__button-icon"]}`}
           />
         )}
+        {props.buttonName === "Pricing & Plans" && }
         {props.buttonName === "Privacy Policy" && (
           <MdOutlinePrivacyTip
             className={`${

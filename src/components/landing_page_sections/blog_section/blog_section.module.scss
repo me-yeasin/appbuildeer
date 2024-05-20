@@ -1,0 +1,29 @@
+@use "../../../utils/styles/function";
+
+.blog-section {
+  .blog-section__lower-title {
+    text-align: center;
+    margin-top: 20px;
+  }
+  .blog-section__show-all-link-container {
+    width: 100vw;
+    text-align: center;
+    margin-top: 20px;
+    .blog-section__show-all-link {
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--color-primary);
+    }
+  }
+
+  .blog-section__blog-list {
+    width: 100vw;
+    margin-top: 50px;
+    list-style: none;
+    @include function.row();
+    overflow-x: scroll;
+    align-items: center;
+    padding: 10px 0;
+  }
+}

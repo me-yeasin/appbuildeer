@@ -4,4 +4,11 @@
   font-size: var(--font-body);
   color: var(--color-text);
   @include function.smooth();
+
+  @include function.small-phone() {
+    --font-body: 0.85rem;
+  }
+  @include function.big-phone() {
+    --font-body: 1rem;
+  }
 }

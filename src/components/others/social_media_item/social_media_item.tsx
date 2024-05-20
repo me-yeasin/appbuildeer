@@ -7,11 +7,14 @@ import classes from "./social_media_item.module.scss";
 interface SocialMediaItemProps {
   icon: ReactNode;
   link: string;
+  className?: string;
 }
 
 const SocialMediaItem: React.FC<SocialMediaItemProps> = (props) => {
   return (
-    <li className={classes["review__social-media-item"]}>
+    <li
+      className={`${props.className} ${classes["review__social-media-item"]}`}
+    >
       <Link
         href={props.link}
         className={classes["review__social-media-item__link"]}

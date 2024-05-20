@@ -1,0 +1,160 @@
+@use "../../utils/styles/function";
+
+.footer {
+  @include function.column();
+  align-items: flex-start;
+  background-color: var(--color-dark);
+  margin-top: 150px;
+  width: 100%;
+  padding: 150px 0 0 0;
+  color: var(--color-light);
+  position: relative;
+
+  .footer__subscribe-news-letter {
+    height: 200px;
+    width: 95%;
+    background-color: var(--color-card-bg);
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 1px 2px 5px rgba($color: #000000, $alpha: 0.35);
+    overflow: hidden;
+    border-radius: 5px;
+
+    .footer__subscribe-news-letter-txt {
+      color: var(--color-text);
+      font-weight: 600;
+      padding: 5px;
+    }
+
+    .footer__subscribe-news-letter-description {
+      font-size: 0.7rem;
+      color: var(--color-text);
+      padding: 5px;
+    }
+    .footer__subscribe-news-letter-input-container {
+      width: 100%;
+      text-align: center;
+      margin-top: 15px;
+      @include function.column();
+      align-items: center;
+      .footer__subscribe-news-letter-input {
+        width: 90%;
+        height: 38px;
+        padding: 0 0 0 7px;
+        border-radius: 38px;
+        border: 1px solid gray;
+        font-weight: 600;
+        color: var(--color-primary);
+        &:focus {
+          border: 1px solid var(--color-primary);
+          outline: none;
+        }
+      }
+
+      .footer__subscribe-news-letter-btn {
+        border: none;
+        background-color: var(--color-primary);
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: var(--color-light);
+        padding: 6px 17px;
+        border-radius: 15px;
+        margin-top: 15px;
+        @include function.smooth();
+
+        @include function.small-tablet() {
+          padding: 7px 23px;
+        }
+      }
+    }
+  }
+
+  .footer__brand-info {
+    @include function.column();
+    align-items: center;
+    width: 100%;
+    padding-bottom: 30px;
+
+    .footer__brand-logo-and-name {
+      @include function.row();
+      align-items: center;
+
+      .footer__brand-logo {
+        height: 30px;
+        width: 30px;
+      }
+
+      .footer__brand-name {
+        color: var(--color-light);
+        font-size: 1.1rem;
+        margin-left: 10px;
+      }
+    }
+
+    .footer__brand-description {
+      text-align: center;
+      font-size: 0.8rem;
+      margin-top: 20px;
+    }
+
+    .footer__brand-btn {
+      border: none;
+      background-color: var(--color-primary);
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--color-light);
+      padding: 5px 12px;
+      border-radius: 15px;
+      margin-top: 30px;
+    }
+
+    .footer__brand-social-link-list {
+      list-style: none;
+      @include function.row();
+      align-items: center;
+      margin-top: 20px;
+
+      .footer__brand-social-link {
+        margin: 0 10px;
+        margin-top: 15px;
+      }
+    }
+  }
+
+  .footer__dev-option {
+    width: 100%;
+    @include function.column();
+    align-items: center;
+    // border-bottom: 1px dashed gray;
+    padding-bottom: 20px;
+
+    .footer__option-title {
+      font-size: 1rem;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+  }
+
+  .footer__other-btns {
+    width: 100%;
+    @include function.column();
+    align-items: center;
+    justify-content: center;
+
+    .footer__other-btn {
+      text-decoration: none;
+      color: lightgray;
+      font-weight: 500;
+      font-size: 0.9rem;
+      margin: 10px 0;
+
+      &:hover,
+      &:active {
+        font-weight: 600;
+        color: var(--color-primary);
+      }
+    }
+  }
+}
