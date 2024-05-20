@@ -14,7 +14,7 @@
   .title-text-container {
     @include function.column();
     align-items: center;
-    margin-bottom: 20px;
+    // margin-bottom: 20px;
 
     .heading-text {
       font-size: 1.4rem;
@@ -104,6 +104,23 @@
         @include function.if-size(450px) {
           font-size: 0.9rem;
         }
+      }
+    }
+
+    .change-communication-option-txt {
+      text-align: center;
+      font-size: 0.6rem;
+      margin-top: 5px;
+      @include function.row();
+      align-items: center;
+      white-space: nowrap;
+
+      .show-option-btn {
+        background-color: transparent;
+        border: none;
+        font-weight: 500;
+        color: var(--color-tertiary);
+        font-size: 0.7rem;
       }
     }
   }

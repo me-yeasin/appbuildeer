@@ -1,7 +1,10 @@
 import { RiCodeView } from "react-icons/ri";
 
 import { MouseEventHandler } from "react";
+import { IoPricetagsOutline } from "react-icons/io5";
 import {
+  MdOutlineAnimation,
+  MdOutlineConnectWithoutContact,
   MdOutlineContactEmergency,
   MdOutlineDesignServices,
   MdOutlinePrivacyTip,
@@ -38,6 +41,13 @@ const NavigationButton: React.FC<NavigationButtonProps> = (props) => {
             } ${classes["drawer-navigation__button-icon"]}`}
           />
         )}
+        {props.buttonName === "Design,Animation & Features" && (
+          <MdOutlineAnimation
+            className={`${
+              props.isActive && classes["drawer-navigation__button-icon-active"]
+            } ${classes["drawer-navigation__button-icon"]}`}
+          />
+        )}
         {props.buttonName === "ShowCase" && (
           <PiSlideshowDuotone
             className={`${
@@ -45,7 +55,13 @@ const NavigationButton: React.FC<NavigationButtonProps> = (props) => {
             } ${classes["drawer-navigation__button-icon"]}`}
           />
         )}
-        {props.buttonName === "Pricing & Plans" && }
+        {props.buttonName === "Pricing & Plans" && (
+          <IoPricetagsOutline
+            className={`${
+              props.isActive && classes["drawer-navigation__button-icon-active"]
+            } ${classes["drawer-navigation__button-icon"]}`}
+          />
+        )}
         {props.buttonName === "Privacy Policy" && (
           <MdOutlinePrivacyTip
             className={`${
@@ -55,6 +71,13 @@ const NavigationButton: React.FC<NavigationButtonProps> = (props) => {
         )}
         {props.buttonName === "About Us" && (
           <MdOutlineContactEmergency
+            className={`${
+              props.isActive && classes["drawer-navigation__button-icon-active"]
+            } ${classes["drawer-navigation__button-icon"]}`}
+          />
+        )}
+        {props.buttonName === "Contact Us" && (
+          <MdOutlineConnectWithoutContact
             className={`${
               props.isActive && classes["drawer-navigation__button-icon-active"]
             } ${classes["drawer-navigation__button-icon"]}`}

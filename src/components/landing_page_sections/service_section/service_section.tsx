@@ -17,8 +17,6 @@ interface ServiceSectionProps {
 }
 
 const ServiceSection: React.FC<ServiceSectionProps> = (props) => {
-  console.log("Serivce Section Calling");
-
   return (
     <section className={classes["service-section"]}>
       <TitleText>Our Services</TitleText>

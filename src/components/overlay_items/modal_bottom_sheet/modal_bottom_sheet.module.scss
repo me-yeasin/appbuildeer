@@ -17,8 +17,10 @@
 
 .modal-bottom-sheet__open {
   height: 70vh;
+  visibility: visible;
 }
 
 .modal-bottom-sheet__close {
   height: 0;
+  visibility: hidden;
 }

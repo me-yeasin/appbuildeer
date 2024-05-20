@@ -4,6 +4,7 @@ import { memo } from "react";
 import AppIcon from "@/assets/icons/app_icon";
 import NavigationList from "./navigation_list/navigation_list";
 
+import DefaultSlider from "@/components/sliders/default_slider/default_slider";
 import { IoMailOpenOutline } from "react-icons/io5";
 import classes from "./drawer.module.scss";
 
@@ -27,6 +28,19 @@ const Drawer: React.FC<DrawerPorps> = (props) => {
           <p className={classes["app-description"]}>Build With Confidence</p>
         </div>
       </div>
+
+      <div className={classes["drawer__offer-slider-container"]}>
+        <DefaultSlider
+          items={[
+            { image: "/images/local/test_img.png", description: "a test one" },
+            { image: "/images/local/test_img.png", description: "a test one" },
+            { image: "/images/local/test_img.png", description: "a test one" },
+          ]}
+          autoPlay={true}
+          loop={true}
+        />
+      </div>
+
       <NavigationList />
       <div className={classes["talk-btn-container"]}>
         <button

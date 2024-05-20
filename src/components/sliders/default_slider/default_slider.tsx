@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { Pagination } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
@@ -14,14 +14,22 @@ interface Item {
 
 interface DefaultSliderProps {
   items: Item[];
+  autoPlay?: boolean;
+  loop?: boolean;
 }
 
-const DefaultSlider: React.FC<DefaultSliderProps> = (props) => {
+const DefaultSlider: React.FC<DefaultSliderProps> = ({
+  autoPlay = false,
+  loop = false,
+  ...props
+}) => {
   return (
     <Swiper
       className={classes["default-slider"]}
       pagination={true}
-      modules={[Pagination]}
+      modules={[Pagination, Autoplay]}
+      autoplay={autoPlay}
+      loop={loop}
     >
       {props.items.map((item, index) => {
         return (

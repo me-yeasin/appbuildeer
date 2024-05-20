@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
 
 import SocialMediaItem from "@/components/others/social_media_item/social_media_item";
 import {
@@ -9,7 +8,10 @@ import {
   MailIcon,
   TwitterIcon,
 } from "@/utils/react_icons/react_icons";
+import OwnerBackgroundAnim from "../../../../assets/lottie/ceo_pic_background.json";
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
+import dynamic from "next/dynamic";
 import classes from "./owner_card.module.scss";
 
 interface OwnerCardProps {
@@ -21,27 +23,16 @@ interface OwnerCardProps {
 }
 
 const OwnerCard: React.FC<OwnerCardProps> = (props) => {
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-
-    return () => {
-      setIsMounted(false);
-    };
-  }, []);
-
   return (
     <div className={classes["about-us-section__meet-with-founder"]}>
       <div className={classes["about-us-section__meet-with-founder__card"]}>
         <div className={classes["founder-card__photo-container"]}>
-          {/* <Lottie
-            animationData={ceoPhotoBackgroundAnim}
-            loop
-            play={isMounted ? true : false}
+          <Lottie
+            animationData={OwnerBackgroundAnim}
+            loop={true}
+            autoPlay={true}
             className={classes["founder-card__photo-bg"]}
-          /> */}
-
+          />
           <Image
             src={"/images/local/profile-img.jpg"}
             alt="founders profile photo"
