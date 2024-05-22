@@ -11,8 +11,9 @@ import TitleText from "@/common_components/text/title_text/title_text";
 import NotFoundScreen from "../not_found/not_found_screen";
 import {
   HowItsWorkItemDataList,
-  ServiceData,
   ServiceHeaderSectionDataList,
+  ServiceWeOfferDataByUrl,
+  ServiceWeOfferDataList,
   ShowCaseItemDataList,
 } from "./data/service_data";
 import classes from "./service_screen.module.scss";
@@ -37,6 +38,7 @@ const ServiceScreen: React.FC<ServiceScreenProps> = (props) => {
 
   return (
     <>
+      {/* Header Section  */}
       <section className={classes["service-section__header"]}>
         <div className={classes["service-section__header-design"]}>
           {getHeaderData.icon}
@@ -54,20 +56,11 @@ const ServiceScreen: React.FC<ServiceScreenProps> = (props) => {
           Get Started
         </button>
       </section>
+
+      {/* How We Make It Happen  */}
       <section className={classes["service-section__how-its-work"]}>
         <BodyText>Here’s how we make it happen:</BodyText>
         {HowItsWorkItemDataList.map((item, index) => {
-          if (index === 2) {
-            return (
-              <HowItsWorkItem
-                key={index}
-                title="Android App Dev"
-                description=""
-                image="/images/local/test_img.png"
-              />
-            );
-          }
-
           return (
             <HowItsWorkItem
               key={index}
@@ -78,6 +71,8 @@ const ServiceScreen: React.FC<ServiceScreenProps> = (props) => {
           );
         })}
       </section>
+
+      {/* What We Will Provide  */}
       <section className={classes["service-section__benefits"]}>
         <TitleText>We Offer :</TitleText>
         <BodyText className={classes["service-section__benefits-subtitle"]}>
@@ -85,7 +80,23 @@ const ServiceScreen: React.FC<ServiceScreenProps> = (props) => {
           services that we offer :
         </BodyText>
         <ul className={classes["service-section__benefits-list"]}>
-          {ServiceData.map((item, index) => {
+          {ServiceWeOfferDataList.map((item, index) => {
+            if (index === 2) {
+              return (
+                <BenefitCardItem
+                  key={index}
+                  title={ServiceWeOfferDataByUrl[props.searchParams].title}
+                  alt={ServiceWeOfferDataByUrl[props.searchParams].alt}
+                  description={
+                    ServiceWeOfferDataByUrl[props.searchParams].description
+                  }
+                  imageLink={
+                    ServiceWeOfferDataByUrl[props.searchParams].imageLink
+                  }
+                />
+              );
+            }
+
             return (
               <BenefitCardItem
                 key={index}
@@ -98,6 +109,8 @@ const ServiceScreen: React.FC<ServiceScreenProps> = (props) => {
           })}
         </ul>
       </section>
+
+      {/* App We Made Before  */}
       <section className={classes["service-section__showcase"]}>
         <TitleText>What We Have Doned So Far</TitleText>
         <BodyText className={classes["service-section__showcase-subtitle"]}>
@@ -120,6 +133,8 @@ const ServiceScreen: React.FC<ServiceScreenProps> = (props) => {
           );
         })}
       </section>
+
+      {/* Get Started Button  */}
       <section className={classes["service-section__get-started"]}>
         <LowerTitle className={classes["service-section__get-started-title"]}>
           Looking for a Android App Development Service

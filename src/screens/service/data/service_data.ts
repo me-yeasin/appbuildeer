@@ -7,14 +7,14 @@ import {
 } from "@/utils/react_icons/react_icons";
 import React from "react";
 
-interface ServiceDataProps {
+interface ServiceWeOfferDataListProps {
   imageLink: string;
   alt: string;
   title: string;
   description: string;
 }
 
-export const ServiceData: ServiceDataProps[] = [
+export const ServiceWeOfferDataList: ServiceWeOfferDataListProps[] = [
   {
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis teneturmagnam id iusto, architecto, harum eum maxime consequuntur aliquamlabore a atque tempora porro ratione distinctio officia qui? Nostrum,aliquid!",
@@ -65,6 +65,50 @@ export const ServiceData: ServiceDataProps[] = [
     imageLink: "/images/local/support_icon_img.png",
   },
 ];
+
+export const ServiceWeOfferDataByUrl: {
+  [key: string]: ServiceWeOfferDataListProps;
+} = {
+  android: {
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis teneturmagnam id iusto, architecto, harum eum maxime consequuntur aliquamlabore a atque tempora porro ratione distinctio officia qui? Nostrum,aliquid!",
+    title: "Moderan Android App Development",
+    alt: "Android App Development Image",
+    imageLink: "/images/local/modrn_android_development_icon_img.png",
+  },
+
+  ios: {
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis teneturmagnam id iusto, architecto, harum eum maxime consequuntur aliquamlabore a atque tempora porro ratione distinctio officia qui? Nostrum,aliquid!",
+    title: "IOS App Development",
+    alt: "Ios App Development Image",
+    imageLink: "/images/local/modrn_android_development_icon_img.png",
+  },
+
+  web: {
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis teneturmagnam id iusto, architecto, harum eum maxime consequuntur aliquamlabore a atque tempora porro ratione distinctio officia qui? Nostrum,aliquid!",
+    title: "Web App Development",
+    alt: "web App Development Image",
+    imageLink: "/images/local/modrn_android_development_icon_img.png",
+  },
+
+  "cross-platform": {
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis teneturmagnam id iusto, architecto, harum eum maxime consequuntur aliquamlabore a atque tempora porro ratione distinctio officia qui? Nostrum,aliquid!",
+    title: "Cross-Platform App Development",
+    alt: "Cross Platform App Development Image",
+    imageLink: "/images/local/modrn_android_development_icon_img.png",
+  },
+
+  backend: {
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis teneturmagnam id iusto, architecto, harum eum maxime consequuntur aliquamlabore a atque tempora porro ratione distinctio officia qui? Nostrum,aliquid!",
+    title: "BackEnd App Development",
+    alt: "Backend App Development Image",
+    imageLink: "/images/local/modrn_android_development_icon_img.png",
+  },
+};
 
 interface HowItsWorkItemProps {
   title: string;
