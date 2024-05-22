@@ -149,7 +149,7 @@ interface HeaderSectionDataProps {
 export const ServiceHeaderSectionDataList: {
   [key: string]: HeaderSectionDataProps;
 } = {
-  "development/android-app-dev": {
+  android: {
     id: "#development/android-app-dev",
     title: "Android App Development",
     boldName: "Android App",
@@ -160,7 +160,7 @@ export const ServiceHeaderSectionDataList: {
           applications. Our approach is centered on creating custom solutions
           that drive growth, enhance engagement, and streamline operations`,
   },
-  "development/ios-app-dev": {
+  ios: {
     id: "#development/ios-app-dev",
     title: "IOS App Development",
     boldName: "IOS App",
@@ -171,7 +171,7 @@ export const ServiceHeaderSectionDataList: {
           applications. Our approach is centered on creating custom solutions
           that drive growth, enhance engagement, and streamline operations`,
   },
-  "development/web-app-dev": {
+  web: {
     id: "#development/web-app-dev",
     title: "Web App Development",
     boldName: "Website",
@@ -182,7 +182,7 @@ export const ServiceHeaderSectionDataList: {
           applications. Our approach is centered on creating custom solutions
           that drive growth, enhance engagement, and streamline operations`,
   },
-  "development/cross-platform-app-dev": {
+  "cross-platform": {
     id: "#development/cross-platform-app-dev",
     title: "Cross Platform App Development",
     boldName: "Cross Platform App",
@@ -193,7 +193,7 @@ export const ServiceHeaderSectionDataList: {
           applications. Our approach is centered on creating custom solutions
           that drive growth, enhance engagement, and streamline operations`,
   },
-  "development/backend-app-dev": {
+  backend: {
     id: "#development/backend-app-dev",
     title: "BackEnd App Development",
     boldName: "Custom Server",

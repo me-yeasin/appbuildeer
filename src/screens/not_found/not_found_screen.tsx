@@ -1,6 +1,8 @@
-import Image from "next/image";
+const Image = dynamic(() => import("next/image"), { ssr: false });
+
 import Link from "next/link";
 
+import dynamic from "next/dynamic";
 import classes from "./not_found_screen.module.scss";
 
 interface NotFoundScreenProps {

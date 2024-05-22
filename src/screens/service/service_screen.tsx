@@ -22,23 +22,18 @@ interface ServiceScreenProps {
 }
 
 const ServiceScreen: React.FC<ServiceScreenProps> = (props) => {
-  const getHeaderData =
-    ServiceHeaderSectionDataList[
-      `${props.searchParams[0]}/${props.searchParams[1]}`
-    ];
+  const getHeaderData = ServiceHeaderSectionDataList[props.searchParams];
 
   const allowedId: string[] = [
-    "development/android-app-dev",
-    "development/ios-app-dev",
-    "development/web-app-dev",
-    "development/cross-platform-app-dev",
-    "development/backend-app-dev",
+    "android",
+    "ios",
+    "web",
+    "cross-platform",
+    "backend",
   ];
 
-  const Id = props.searchParams || [];
-
-  if (!allowedId.includes(`${Id[0]}/${Id[1]}`))
-    return <NotFoundScreen queryUrl={`${Id[0]}/${Id[1]}`} />;
+  if (!allowedId.includes(props.searchParams))
+    return <NotFoundScreen queryUrl={props.searchParams} />;
 
   return (
     <>
