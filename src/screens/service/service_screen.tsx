@@ -57,6 +57,17 @@ const ServiceScreen: React.FC<ServiceScreenProps> = (props) => {
       <section className={classes["service-section__how-its-work"]}>
         <BodyText>Here’s how we make it happen:</BodyText>
         {HowItsWorkItemDataList.map((item, index) => {
+          if (index === 2) {
+            return (
+              <HowItsWorkItem
+                key={index}
+                title="Android App Dev"
+                description=""
+                image="/images/local/test_img.png"
+              />
+            );
+          }
+
           return (
             <HowItsWorkItem
               key={index}
