@@ -1,0 +1,47 @@
+@use "../../utils/styles/function";
+
+.not-found-screen {
+  height: 90dvh;
+  width: 100dvw;
+  @include function.column();
+  align-items: center;
+
+  .not-found-screen__img-container {
+    width: 100%;
+    margin-top: 30px;
+    text-align: center;
+    height: 300px;
+
+    .not-found-screen__img {
+      object-fit: contain;
+      height: 100%;
+      width: 70%;
+    }
+  }
+
+  .not-found-screen__title {
+    font-size: 1.4rem;
+    text-align: center;
+    width: 100%;
+  }
+
+  .not-found-screen__subtitle {
+    text-align: center;
+    width: 100%;
+    margin-top: 9px;
+    font-size: 0.8rem;
+  }
+
+  .not-found-screen__actions {
+    text-align: center;
+    margin-top: 50px;
+    .not-found-screen__actions__btn {
+      text-decoration: none;
+      color: var(--color-light);
+      font-size: 0.9rem;
+      background-color: var(--color-primary);
+      padding: 10px 30px;
+      border-radius: 50px;
+    }
+  }
+}

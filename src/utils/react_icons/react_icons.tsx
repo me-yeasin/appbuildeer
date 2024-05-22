@@ -11,6 +11,7 @@ import { GiMultipleTargets } from "react-icons/gi";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoMailOpenOutline } from "react-icons/io5";
 import { SiIos } from "react-icons/si";
+import { SlSocialSkype } from "react-icons/sl";
 
 export const AndroidIcon = <FaAndroid />;
 export const IosIcon = <SiIos />;
@@ -23,3 +24,4 @@ export const WhatsAppIcon = <FaWhatsapp />;
 export const MailIcon = <IoMailOpenOutline />;
 export const FaceBookIcon = <FaFacebookF />;
 export const TwitterIcon = <FaXTwitter />;
+export const SkypeIcon = <SlSocialSkype />;

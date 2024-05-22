@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import React from "react";
-import { EffectCube } from "swiper/modules";
+import { Autoplay, EffectCube } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
@@ -36,7 +36,7 @@ const CubicImageSlider: React.FC<CubicImageSliderProps> = (props) => {
           disableOnInteraction: false,
           pauseOnMouseEnter: true,
         }}
-        modules={[EffectCube]}
+        modules={[EffectCube, Autoplay]}
         className={classes["slider"]}
       >
         {props.itemList.map((item, index) => (

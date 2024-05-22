@@ -46,7 +46,11 @@
 
     .let-talk-btn {
       border: none;
-      background-color: var(--color-primary);
+      background: linear-gradient(
+        to right,
+        var(--color-primary),
+        var(--color-tertiary)
+      );
       @include function.row();
       align-items: center;
       justify-content: center;
@@ -85,7 +89,7 @@
         }
       }
 
-      .let-talk-btn__icon {
+      svg {
         height: 20px;
         width: 20px;
         margin-right: 5px;

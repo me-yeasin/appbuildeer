@@ -4,8 +4,8 @@ import { memo } from "react";
 import AppIcon from "@/assets/icons/app_icon";
 import NavigationList from "./navigation_list/navigation_list";
 
+import { selectedCommunicationItem } from "@/components/landing_page_sections/heading_section/heading_section";
 import DefaultSlider from "@/components/sliders/default_slider/default_slider";
-import { IoMailOpenOutline } from "react-icons/io5";
 import classes from "./drawer.module.scss";
 
 interface DrawerPorps {
@@ -45,13 +45,9 @@ const Drawer: React.FC<DrawerPorps> = (props) => {
       <div className={classes["talk-btn-container"]}>
         <button
           className={classes["talk-btn"]}
-          onClick={() =>
-            router.push(
-              `mailto:appbuildeer@gmail.com?subject=Subject&body=${"Hi AppBuildeer"}`
-            )
-          }
+          onClick={() => router.push(selectedCommunicationItem.link)}
         >
-          <IoMailOpenOutline />
+          {selectedCommunicationItem.icon}
           <p>Let's Talk</p>
         </button>
         <p className={classes["info"]}>

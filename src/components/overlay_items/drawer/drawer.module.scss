@@ -87,7 +87,7 @@
     .talk-btn {
       background-color: var(--color-primary);
       border: none;
-      color: var(--color-text);
+      color: var(--color-light);
       @include function.row();
       align-items: center;
       justify-content: center;
