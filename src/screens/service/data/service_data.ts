@@ -82,7 +82,7 @@ export const ServiceWeOfferDataByUrl: {
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis teneturmagnam id iusto, architecto, harum eum maxime consequuntur aliquamlabore a atque tempora porro ratione distinctio officia qui? Nostrum,aliquid!",
     title: "IOS App Development",
     alt: "Ios App Development Image",
-    imageLink: "/images/local/modrn_android_development_icon_img.png",
+    imageLink: "/images/local/i_phone_3d_img.png",
   },
 
   web: {
@@ -90,7 +90,7 @@ export const ServiceWeOfferDataByUrl: {
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis teneturmagnam id iusto, architecto, harum eum maxime consequuntur aliquamlabore a atque tempora porro ratione distinctio officia qui? Nostrum,aliquid!",
     title: "Web App Development",
     alt: "web App Development Image",
-    imageLink: "/images/local/modrn_android_development_icon_img.png",
+    imageLink: "/images/local/web_3d_img.png",
   },
 
   "cross-platform": {
@@ -98,7 +98,7 @@ export const ServiceWeOfferDataByUrl: {
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis teneturmagnam id iusto, architecto, harum eum maxime consequuntur aliquamlabore a atque tempora porro ratione distinctio officia qui? Nostrum,aliquid!",
     title: "Cross-Platform App Development",
     alt: "Cross Platform App Development Image",
-    imageLink: "/images/local/modrn_android_development_icon_img.png",
+    imageLink: "/images/local/cross_platform_3d_img.png",
   },
 
   backend: {
@@ -106,7 +106,7 @@ export const ServiceWeOfferDataByUrl: {
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis teneturmagnam id iusto, architecto, harum eum maxime consequuntur aliquamlabore a atque tempora porro ratione distinctio officia qui? Nostrum,aliquid!",
     title: "BackEnd App Development",
     alt: "Backend App Development Image",
-    imageLink: "/images/local/modrn_android_development_icon_img.png",
+    imageLink: "/images/local/backend_3d_img.png",
   },
 };
 
