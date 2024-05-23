@@ -131,6 +131,7 @@
         border-radius: 5px;
         margin: 10px 5px;
         box-shadow: 0 2px 5px rgba($color: #000000, $alpha: 0.25);
+        cursor: pointer;
 
         .button__img {
           height: 80%;
@@ -138,6 +139,31 @@
           object-fit: cover;
         }
       }
+    }
+  }
+}
+
+.service-design__action-section {
+  width: 100%;
+  height: 200px;
+  @include function.column();
+  align-items: center;
+  justify-content: center;
+
+  .action-section__btn-container {
+    width: 100%;
+    text-align: center;
+    .btn-container__btn {
+      border: none;
+      width: 50%;
+      background-color: var(--color-tertiary-200);
+      padding: 12px 10px;
+      border-radius: 100px;
+      color: var(--color-light);
+      font-weight: 500;
+      letter-spacing: 1px;
+      font-size: 0.8rem;
+      cursor: pointer;
     }
   }
 }

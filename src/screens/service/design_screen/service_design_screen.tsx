@@ -122,6 +122,11 @@ const ServiceDesignScreen: React.FC<ServiceDesignScreenProps> = (props) => {
           </li>
         </ul>
       </section>
+      <section className={classes["service-design__action-section"]}>
+        <div className={classes["action-section__btn-container"]}>
+          <button className={classes["btn-container__btn"]}>Lets Create</button>
+        </div>
+      </section>
     </>
   );
 };
