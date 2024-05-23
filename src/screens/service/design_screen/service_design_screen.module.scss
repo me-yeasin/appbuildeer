@@ -93,3 +93,51 @@
     }
   }
 }
+
+.service-design__showcase-section {
+  margin-top: 100px;
+
+  .showcase-section__title-container {
+    @include function.row();
+    align-items: center;
+    justify-content: space-between;
+
+    .title-container__link {
+      text-decoration: none;
+      color: var(--color-primary);
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 0.8rem;
+      margin-right: 5px;
+    }
+  }
+
+  .showcase-section__showcase-list {
+    @include function.row();
+    height: 300px;
+    width: 100vw;
+    // background-color: gray;
+    align-items: center;
+    overflow: scroll;
+
+    .showcase-list__item {
+      @include function.column();
+      align-items: center;
+
+      .list-item__button {
+        height: 120px;
+        width: 120px;
+        border: none;
+        border-radius: 5px;
+        margin: 10px 5px;
+        box-shadow: 0 2px 5px rgba($color: #000000, $alpha: 0.25);
+
+        .button__img {
+          height: 80%;
+          width: 80%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}

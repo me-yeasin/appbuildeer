@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 import BodyText from "@/common_components/text/body_text/body_text";
 import TitleText from "@/common_components/text/title_text/title_text";
@@ -88,6 +89,36 @@ const ServiceDesignScreen: React.FC<ServiceDesignScreenProps> = (props) => {
               className={classes["item__img"]}
             />
             <p className={classes["item__name"]}>Icon/Icon Set</p>
+          </li>
+        </ul>
+      </section>
+      <section className={classes["service-design__showcase-section"]}>
+        <div className={classes["showcase-section__title-container"]}>
+          <TitleText>Icons we made before</TitleText>
+          <Link href={""} className={classes["title-container__link"]}>
+            See All
+          </Link>
+        </div>
+        <ul className={classes["showcase-section__showcase-list"]}>
+          <li className={classes["showcase-list__item"]}>
+            <button className={classes["list-item__button"]}>
+              <Image
+                src={"/images/local/test_img.png"}
+                alt="test image"
+                height={200}
+                width={200}
+                className={classes["button__img"]}
+              />
+            </button>
+            <button className={classes["list-item__button"]}>
+              <Image
+                src={"/images/local/test_img.png"}
+                alt="test image"
+                height={200}
+                width={200}
+                className={classes["button__img"]}
+              />
+            </button>
           </li>
         </ul>
       </section>
