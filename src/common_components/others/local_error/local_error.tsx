@@ -1,13 +1,12 @@
 import Image from "next/image";
 
-import classes from "./error_screen.module.scss";
+import classes from "./local_error.module.scss";
 
-interface ErrorScreenProps {
-  error: Error & { digest?: string };
-  reset: () => void;
+interface LocalErrorProps {
+  onClick: () => void;
 }
 
-const ErrorScreen: React.FC<ErrorScreenProps> = (props) => {
+const LocalError: React.FC<LocalErrorProps> = (props) => {
   return (
     <div className={classes["error-screen"]}>
       <div className={classes["error-screen__img-container"]}>
@@ -28,18 +27,15 @@ const ErrorScreen: React.FC<ErrorScreenProps> = (props) => {
         reprehenderit praesentium accusamus blanditiis.
       </p>
       <div className={classes["error-screen__actions"]}>
-        <button className={classes["error-screen__actions__btn1"]}>
-          Go back
-        </button>
         <button
-          onClick={props.reset}
-          className={classes["error-screen__actions__btn2"]}
+          onClick={props.onClick}
+          className={classes["error-screen__actions__btn"]}
         >
-          Try Again
+          Refresh
         </button>
       </div>
     </div>
   );
 };
 
-export default ErrorScreen;
+export default LocalError;

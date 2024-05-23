@@ -249,3 +249,16 @@ export const ServiceHeaderSectionDataList: {
           that drive growth, enhance engagement, and streamline operations`,
   },
 };
+
+//! FireBase Model For Projects
+
+// {
+//   "title" : "A App Title",
+//   "description" : "A short description of the app",
+//   "thumbnail" : "/images/local/test_img.png",
+//   "images" : ["one","two","there"],
+//   "links" : ["one","two","three"],
+//   "features" : ["one","two","three"],
+//   "tag" : "android",
+//   "priority" : 3
+// }

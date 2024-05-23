@@ -1,4 +1,4 @@
-@use "../../utils/styles/function";
+@use "../../../utils/styles/function";
 
 .error-screen {
   @include function.column();
@@ -10,21 +10,21 @@
     margin-top: 50px;
 
     .error-screen__img {
-      width: 200px;
-      height: 200px;
+      width: 100px;
+      height: 100px;
       object-fit: cover;
     }
   }
 
   .error-screen__title {
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1rem;
     margin-top: 20px;
   }
 
   .error-screen__description {
     text-align: center;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     margin-top: 5px;
   }
 
@@ -35,16 +35,7 @@
     justify-content: space-around;
     margin-top: 30px;
 
-    .error-screen__actions__btn1 {
-      width: 110px;
-      height: 40px;
-      border-radius: 20px;
-      border: 1px solid gray;
-      background-color: transparent;
-      color: var(--color-light);
-    }
-
-    .error-screen__actions__btn2 {
+    .error-screen__actions__btn {
       width: 110px;
       height: 40px;
       border-radius: 20px;

@@ -26,6 +26,7 @@ const NavigationSublist: React.FC<NavigationSublistProps> = (props) => {
                 key={index}
                 linkName={item.title}
                 icon={item.icon}
+                href={`/services/dev/${item.link}`}
               />
             );
           })}
@@ -39,6 +40,7 @@ const NavigationSublist: React.FC<NavigationSublistProps> = (props) => {
                 key={index}
                 linkName={item.title}
                 icon={item.icon}
+                href=""
               />
             );
           })}

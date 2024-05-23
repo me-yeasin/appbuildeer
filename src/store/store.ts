@@ -1,11 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 
+import drawer_slice from "./slice/drawer_slice";
 import ThemeSlice from "./slice/theme_slice";
 
 export const makeStore = () =>
   configureStore({
     reducer: {
       themeSlice: ThemeSlice,
+      drawerSlice: drawer_slice,
     },
   });
 

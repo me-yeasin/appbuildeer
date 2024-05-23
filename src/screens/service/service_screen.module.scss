@@ -113,6 +113,27 @@
     text-align: center;
     margin-top: 20px;
   }
+
+  .service-section__showcase-no-project-found-container {
+    @include function.column();
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    .service-section__showcase-no-project__title {
+      width: 100%;
+      text-align: center;
+      margin-top: 50px;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .service-section__showcase-no-project__subtitle {
+      width: 100%;
+      text-align: center;
+      margin-top: 10px;
+      margin-bottom: 50px;
+    }
+  }
 }
 
 .service-section__get-started {
@@ -184,6 +205,18 @@
   border-radius: 10px;
   @include function.column();
   align-items: flex-start;
+  animation: anim 500ms ease;
+
+  @keyframes anim {
+    from {
+      transform: translateX(-500px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0px);
+      opacity: 1;
+    }
+  }
 
   .service-section__showcase-list-item__img-container {
     width: 100%;

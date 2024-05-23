@@ -1,0 +1,24 @@
+@use "../../../utils/styles/function";
+
+.loading {
+  width: 100%;
+  @include function.column();
+  align-items: center;
+  margin: 15px 0;
+
+  .loading-img-container {
+    height: 150px;
+    width: 150px;
+
+    .loading-img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .loading-txt {
+    font-size: 0.9rem;
+    margin-top: 8px;
+  }
+}

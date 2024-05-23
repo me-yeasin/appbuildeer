@@ -2,23 +2,25 @@ import { useRouter } from "next/navigation";
 import { memo } from "react";
 
 import AppIcon from "@/assets/icons/app_icon";
-import NavigationList from "./navigation_list/navigation_list";
-
 import { selectedCommunicationItem } from "@/components/landing_page_sections/heading_section/heading_section";
 import DefaultSlider from "@/components/sliders/default_slider/default_slider";
+import { useAppSelector } from "../../../store/hooks";
+import NavigationList from "./navigation_list/navigation_list";
+
 import classes from "./drawer.module.scss";
 
-interface DrawerPorps {
-  open: boolean;
-}
+interface DrawerPorps {}
 
 const Drawer: React.FC<DrawerPorps> = (props) => {
   const router = useRouter();
+  const isDrawerOpen = useAppSelector(
+    (state) => state.drawerSlice.isOpenDrawer
+  );
 
   return (
     <div
       className={`${
-        props.open ? classes["drawer-open"] : classes["drawer-close"]
+        isDrawerOpen ? classes["drawer-open"] : classes["drawer-close"]
       } ${classes["drawer-root"]}`}
     >
       <div className={classes["app-logo-name"]}>

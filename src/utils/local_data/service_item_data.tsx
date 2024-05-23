@@ -53,7 +53,7 @@ export const devServices: ServiceItemData[] = [
     "Cross Platform App Development",
     "lorem new word",
     <MdDeveloperMode />,
-    "cross-paltform"
+    "cross-platform"
   ),
   new ServiceItemData(
     "BackEnd App Development",

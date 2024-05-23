@@ -2,9 +2,12 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 import FeaturesPointerIcon from "@/assets/icons/feature_pointer_icon";
 import LinkIcon from "@/assets/icons/link_icon";
+import Loading from "@/common_components/others/loading/loading";
+import LocalError from "@/common_components/others/local_error/local_error";
 import BodyText from "@/common_components/text/body_text/body_text";
 import LowerTitle from "@/common_components/text/lower_title/lower_title";
 import TitleText from "@/common_components/text/title_text/title_text";
@@ -14,7 +17,6 @@ import {
   ServiceHeaderSectionDataList,
   ServiceWeOfferDataByUrl,
   ServiceWeOfferDataList,
-  ShowCaseItemDataList,
 } from "./data/service_data";
 import classes from "./service_screen.module.scss";
 
@@ -23,6 +25,9 @@ interface ServiceScreenProps {
 }
 
 const ServiceScreen: React.FC<ServiceScreenProps> = (props) => {
+  const [projectList, setProjectList] = useState<any[] | null>(null);
+  const [error, setError] = useState<any | null>(null);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const getHeaderData = ServiceHeaderSectionDataList[props.searchParams];
 
   const allowedId: string[] = [
@@ -35,6 +40,29 @@ const ServiceScreen: React.FC<ServiceScreenProps> = (props) => {
 
   if (!allowedId.includes(props.searchParams))
     return <NotFoundScreen queryUrl={props.searchParams} />;
+
+  const getAndroidProjects = async (): Promise<any> => {
+    try {
+      setIsLoading(true);
+      const response = await fetch(
+        `https://appbuildeer-24049-default-rtdb.firebaseio.com/projects.json`
+      );
+      const result: Promise<any> = await response.json();
+
+      const projects = Object.values(result).filter(
+        (project) => project.tag === props.searchParams && project.priority <= 3
+      );
+      setProjectList(projects);
+    } catch (error) {
+      setError(error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    getAndroidProjects();
+  }, []);
 
   return (
     <>
@@ -109,7 +137,6 @@ const ServiceScreen: React.FC<ServiceScreenProps> = (props) => {
           })}
         </ul>
       </section>
-
       {/* App We Made Before  */}
       <section className={classes["service-section__showcase"]}>
         <TitleText>What We Have Doned So Far</TitleText>
@@ -119,19 +146,44 @@ const ServiceScreen: React.FC<ServiceScreenProps> = (props) => {
           dolore omnis quaerat incidunt aspernatur blanditiis obcaecati
           similique itaque necessitatibus harum quis. Eligendi?
         </BodyText>
-        {ShowCaseItemDataList.map((item, index) => {
-          return (
-            <ShowCaseItem
-              key={index}
-              alt={item.alt}
-              featureList={item.featureList}
-              imageLink={item.imageLink}
-              linkList={item.linkList}
-              shortDescription={item.shortDescription}
-              title={item.title}
-            />
-          );
-        })}
+        {isLoading && <Loading />}
+        {error && !isLoading && <LocalError onClick={getAndroidProjects} />}
+        {projectList && projectList.length === 0 && !isLoading && !error && (
+          <div
+            className={
+              classes["service-section__showcase-no-project-found-container"]
+            }
+          >
+            <p
+              className={classes["service-section__showcase-no-project__title"]}
+            >
+              No Projects Found
+            </p>
+            <BodyText
+              className={
+                classes["service-section__showcase-no-project__subtitle"]
+              }
+            >
+              maybe for {props.searchParams}, there is no project upload yet!
+            </BodyText>
+          </div>
+        )}
+        {!isLoading &&
+          !error &&
+          projectList &&
+          projectList.map((item, index) => {
+            return (
+              <ShowCaseItem
+                key={index}
+                alt={item.alt}
+                featureList={item.features}
+                imageLink={item.thumbnail}
+                linkList={item.links}
+                shortDescription={item.description}
+                title={item.title}
+              />
+            );
+          })}
       </section>
 
       {/* Get Started Button  */}
